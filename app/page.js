@@ -4,12 +4,36 @@
 import { useState } from 'react';
 import { Mail } from 'lucide-react';
 
+
 const games = [
   {
     id: 1,
     name: "MyLittleExploree",
     image: "/api/placeholder/400/300",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    platform: "PC",
+    contributions: [
+      "Developed and enhanced game functionalities, such as redesigning mechanics from the initial prototype",
+      "Bug fixing, with the rest of the team to adjust the game to our preferences",
+      "Helped to adjust certain animations from the blocks/rocks on the game so that they feel more like an obstacle"
+    ],
+    projectInfo: {
+      technologies: ["Unity"],
+      languages: ["C#"],
+      communication: ["Discord", "Github Projects"],
+      management: "Github"
+    },
+    links: {
+      store: "#",
+      website: "#",
+      twitter: "#"
+    },
+    gallery: [
+      "/api/placeholder/600/400",
+      "/api/placeholder/600/400",
+      "/api/placeholder/600/400",
+      "/api/placeholder/600/400"
+    ]
   },
   {
     id: 2,
@@ -164,22 +188,81 @@ export default function Home() {
       </main>
 
       {selectedGame && (
-        <div className="fixed inset-0 bg-blue-900/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-          <div className="bg-white/90 backdrop-blur-sm rounded-lg max-w-2xl w-full p-6 shadow-2xl border border-blue-100">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-2xl font-bold text-blue-900">{selectedGame.name}</h3>
-              <button 
-                onClick={() => setSelectedGame(null)}
-                className="text-blue-500 hover:text-blue-700 text-2xl transition-colors"
-              >
-                ×
-              </button>
-            </div>
-            <img src={selectedGame.image} alt={selectedGame.name} className="w-full h-64 object-cover rounded-lg mb-4" />
-            <p className="text-blue-800">{selectedGame.description}</p>
+  <div className="fixed inset-0 bg-blue-900/50 backdrop-blur-sm flex items-center justify-center p-4 z-50 overflow-y-auto">
+    <div className="bg-white/90 backdrop-blur-sm rounded-lg max-w-4xl w-full my-8 p-8 shadow-2xl border border-blue-100">
+      <div className="flex justify-between items-center mb-6">
+        <h3 className="text-3xl font-bold text-blue-900">{selectedGame.name} | {selectedGame.platform}</h3>
+        <button 
+          onClick={() => setSelectedGame(null)}
+          className="text-blue-500 hover:text-blue-700 text-3xl transition-colors"
+        >
+          ×
+        </button>
+      </div>
+
+      <div className="prose max-w-none mb-8">
+        <p className="text-blue-800 text-lg">{selectedGame.description}</p>
+      </div>
+
+      <div className="mb-8">
+        <h4 className="text-xl font-semibold text-blue-800 mb-4">What I worked on:</h4>
+        <ul className="space-y-2 text-blue-800">
+          {selectedGame.contributions.map((contribution, index) => (
+            <li key={index} className="flex items-start">
+              <span className="mr-2">•</span>
+              <span>{contribution}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="bg-blue-50 rounded-lg p-6 mb-8">
+        <h4 className="text-xl font-semibold text-blue-800 mb-4">Project Info</h4>
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <p className="font-medium text-blue-900">Technologies</p>
+            <p className="text-blue-800">{selectedGame.projectInfo.technologies.join(" | ")}</p>
+          </div>
+          <div>
+            <p className="font-medium text-blue-900">Languages</p>
+            <p className="text-blue-800">{selectedGame.projectInfo.languages.join(" | ")}</p>
+          </div>
+          <div>
+            <p className="font-medium text-blue-900">QA & Communication</p>
+            <p className="text-blue-800">{selectedGame.projectInfo.communication.join(" | ")}</p>
+          </div>
+          <div>
+            <p className="font-medium text-blue-900">Project Management</p>
+            <p className="text-blue-800">{selectedGame.projectInfo.management}</p>
           </div>
         </div>
-      )}
+      </div>
+
+      <div className="mb-6">
+        <h4 className="text-xl font-semibold text-blue-800 mb-4">Gallery</h4>
+        <div className="grid grid-cols-2 gap-4">
+          {selectedGame.gallery.map((image, index) => (
+            <img 
+              key={index}
+              src={image}
+              alt={`${selectedGame.name} screenshot ${index + 1}`}
+              className="rounded-lg w-full h-48 object-cover"
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="flex gap-4 text-sm">
+        <a href={selectedGame.links.store} className="text-blue-600 hover:text-blue-800">Store page</a>
+        <span className="text-blue-300">|</span>
+        <a href={selectedGame.links.website} className="text-blue-600 hover:text-blue-800">Website link</a>
+        <span className="text-blue-300">|</span>
+        <a href={selectedGame.links.twitter} className="text-blue-600 hover:text-blue-800">Twitter/X</a>
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 }
