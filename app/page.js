@@ -39,19 +39,88 @@ const games = [
     id: 2,
     name: "CatchMeIfYouCan",
     image: "/api/placeholder/400/300",
-    description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    platform: "PC",
+    contributions: [
+      "Developed and enhanced game functionalities, such as redesigning mechanics from the initial prototype",
+      "Bug fixing, with the rest of the team to adjust the game to our preferences",
+      "Helped to adjust certain animations from the blocks/rocks on the game so that they feel more like an obstacle"
+    ],
+    projectInfo: {
+      technologies: ["Unity"],
+      languages: ["C#"],
+      communication: ["Discord", "Github Projects"],
+      management: "Github"
+    },
+    links: {
+      store: "#",
+      website: "#",
+      twitter: "#"
+    },
+    gallery: [
+      "/api/placeholder/600/400",
+      "/api/placeholder/600/400",
+      "/api/placeholder/600/400",
+      "/api/placeholder/600/400"
+    ]
   },
   {
     id: 3,
     name: "CloudShooter",
     image: "/api/placeholder/400/300",
-    description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    platform: "PC",
+    contributions: [
+      "Developed and enhanced game functionalities, such as redesigning mechanics from the initial prototype",
+      "Bug fixing, with the rest of the team to adjust the game to our preferences",
+      "Helped to adjust certain animations from the blocks/rocks on the game so that they feel more like an obstacle"
+    ],
+    projectInfo: {
+      technologies: ["Unity"],
+      languages: ["C#"],
+      communication: ["Discord", "Github Projects"],
+      management: "Github"
+    },
+    links: {
+      store: "#",
+      website: "#",
+      twitter: "#"
+    },
+    gallery: [
+      "/api/placeholder/600/400",
+      "/api/placeholder/600/400",
+      "/api/placeholder/600/400",
+      "/api/placeholder/600/400"
+    ]
   },
   {
     id: 4,
     name: "MistSolitude",
     image: "/api/placeholder/400/300",
-    description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    platform: "PC",
+    contributions: [
+      "Developed and enhanced game functionalities, such as redesigning mechanics from the initial prototype",
+      "Bug fixing, with the rest of the team to adjust the game to our preferences",
+      "Helped to adjust certain animations from the blocks/rocks on the game so that they feel more like an obstacle"
+    ],
+    projectInfo: {
+      technologies: ["Unity"],
+      languages: ["C#"],
+      communication: ["Discord", "Github Projects"],
+      management: "Github"
+    },
+    links: {
+      store: "#",
+      website: "#",
+      twitter: "#"
+    },
+    gallery: [
+      "/api/placeholder/600/400",
+      "/api/placeholder/600/400",
+      "/api/placeholder/600/400",
+      "/api/placeholder/600/400"
+    ]
   }
 ];
 
@@ -188,80 +257,113 @@ export default function Home() {
       </main>
 
       {selectedGame && (
-  <div className="fixed inset-0 bg-blue-900/50 backdrop-blur-sm flex items-center justify-center p-4 z-50 overflow-y-auto">
-    <div className="bg-white/90 backdrop-blur-sm rounded-lg max-w-4xl w-full my-8 p-8 shadow-2xl border border-blue-100">
-      <div className="flex justify-between items-center mb-6">
-        <h3 className="text-3xl font-bold text-blue-900">{selectedGame.name} | {selectedGame.platform}</h3>
-        <button 
-          onClick={() => setSelectedGame(null)}
-          className="text-blue-500 hover:text-blue-700 text-3xl transition-colors"
+        <div 
+          className="fixed inset-0 bg-blue-900/50 backdrop-blur-sm z-50"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setSelectedGame(null);
+            }
+          }}
         >
-          ×
-        </button>
-      </div>
+          {/* Changed outer container to ensure proper viewport heights */}
+          <div className="h-[100vh] w-full overflow-y-auto">
+            <div className="min-h-full flex items-center justify-center p-4">
+              <div 
+                className="relative bg-white/90 backdrop-blur-sm rounded-xl w-full max-w-6xl mx-auto shadow-2xl border border-blue-100"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button 
+                  onClick={() => setSelectedGame(null)}
+                  className="absolute -top-4 -right-4 w-10 h-10 flex items-center justify-center text-white bg-blue-600 hover:bg-blue-700 rounded-full shadow-lg text-2xl transition-colors z-50"
+                >
+                  ×
+                </button>
 
-      <div className="prose max-w-none mb-8">
-        <p className="text-blue-800 text-lg">{selectedGame.description}</p>
-      </div>
+                {/* Content container with automatic height */}
+                <div className="p-8 lg:p-12 space-y-8">
+                  <h3 className="text-4xl font-bold text-blue-900">{selectedGame.name} | {selectedGame.platform || 'PC'}</h3>
 
-      <div className="mb-8">
-        <h4 className="text-xl font-semibold text-blue-800 mb-4">What I worked on:</h4>
-        <ul className="space-y-2 text-blue-800">
-          {selectedGame.contributions.map((contribution, index) => (
-            <li key={index} className="flex items-start">
-              <span className="mr-2">•</span>
-              <span>{contribution}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+                  <div className="prose prose-lg max-w-none">
+                    <p className="text-blue-800 text-xl">{selectedGame.description}</p>
+                  </div>
 
-      <div className="bg-blue-50 rounded-lg p-6 mb-8">
-        <h4 className="text-xl font-semibold text-blue-800 mb-4">Project Info</h4>
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <p className="font-medium text-blue-900">Technologies</p>
-            <p className="text-blue-800">{selectedGame.projectInfo.technologies.join(" | ")}</p>
-          </div>
-          <div>
-            <p className="font-medium text-blue-900">Languages</p>
-            <p className="text-blue-800">{selectedGame.projectInfo.languages.join(" | ")}</p>
-          </div>
-          <div>
-            <p className="font-medium text-blue-900">QA & Communication</p>
-            <p className="text-blue-800">{selectedGame.projectInfo.communication.join(" | ")}</p>
-          </div>
-          <div>
-            <p className="font-medium text-blue-900">Project Management</p>
-            <p className="text-blue-800">{selectedGame.projectInfo.management}</p>
+                  {selectedGame.contributions && (
+                    <div>
+                      <h4 className="text-2xl font-semibold text-blue-800 mb-6">What I worked on:</h4>
+                      <ul className="space-y-4 text-lg text-blue-800">
+                        {selectedGame.contributions.map((contribution, index) => (
+                          <li key={index} className="flex items-start">
+                            <span className="mr-3 text-blue-600">•</span>
+                            <span>{contribution}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {selectedGame.projectInfo && (
+                    <div className="bg-blue-50 rounded-lg p-6">
+                      <h4 className="text-2xl font-semibold text-blue-800 mb-6">Project Info</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {selectedGame.projectInfo.technologies && (
+                          <div>
+                            <p className="font-medium text-blue-900 text-lg">Technologies</p>
+                            <p className="text-blue-800">{selectedGame.projectInfo.technologies.join(" | ")}</p>
+                          </div>
+                        )}
+                        {selectedGame.projectInfo.languages && (
+                          <div>
+                            <p className="font-medium text-blue-900 text-lg">Languages</p>
+                            <p className="text-blue-800">{selectedGame.projectInfo.languages.join(" | ")}</p>
+                          </div>
+                        )}
+                        {selectedGame.projectInfo.communication && (
+                          <div>
+                            <p className="font-medium text-blue-900 text-lg">QA & Communication</p>
+                            <p className="text-blue-800">{selectedGame.projectInfo.communication.join(" | ")}</p>
+                          </div>
+                        )}
+                        {selectedGame.projectInfo.management && (
+                          <div>
+                            <p className="font-medium text-blue-900 text-lg">Project Management</p>
+                            <p className="text-blue-800">{selectedGame.projectInfo.management}</p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedGame.gallery && (
+                    <div>
+                      <h4 className="text-2xl font-semibold text-blue-800 mb-6">Gallery</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {selectedGame.gallery.map((image, index) => (
+                          <img 
+                            key={index}
+                            src={image}
+                            alt={`${selectedGame.name} screenshot ${index + 1}`}
+                            className="rounded-lg w-full h-auto object-cover"
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedGame.links && (
+                    <div className="flex gap-4 text-lg">
+                      <a href={selectedGame.links.store} className="text-blue-600 hover:text-blue-800">Store page</a>
+                      <span className="text-blue-300">|</span>
+                      <a href={selectedGame.links.website} className="text-blue-600 hover:text-blue-800">Website link</a>
+                      <span className="text-blue-300">|</span>
+                      <a href={selectedGame.links.twitter} className="text-blue-600 hover:text-blue-800">Twitter/X</a>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div className="mb-6">
-        <h4 className="text-xl font-semibold text-blue-800 mb-4">Gallery</h4>
-        <div className="grid grid-cols-2 gap-4">
-          {selectedGame.gallery.map((image, index) => (
-            <img 
-              key={index}
-              src={image}
-              alt={`${selectedGame.name} screenshot ${index + 1}`}
-              className="rounded-lg w-full h-48 object-cover"
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className="flex gap-4 text-sm">
-        <a href={selectedGame.links.store} className="text-blue-600 hover:text-blue-800">Store page</a>
-        <span className="text-blue-300">|</span>
-        <a href={selectedGame.links.website} className="text-blue-600 hover:text-blue-800">Website link</a>
-        <span className="text-blue-300">|</span>
-        <a href={selectedGame.links.twitter} className="text-blue-600 hover:text-blue-800">Twitter/X</a>
-      </div>
-    </div>
-  </div>
-)}
+      )}
 
     </div>
   );
