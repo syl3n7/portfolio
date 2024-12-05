@@ -1,36 +1,179 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Game Developer Portfolio
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js 15 and Tailwind CSS, showcasing game development projects and professional experience. Features a clean, minimalist design with a focus on showcasing interactive game projects.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Modern, responsive design with a blue gradient theme
+- Interactive game portfolio with detailed modal views
+- Smooth scroll navigation
+- Dynamic content loading
+- SEO optimized with Next.js metadata
+- Optimized for performance with Turbopack
+
+## 🛠 Tech Stack
+
+- **Framework**: Next.js 15
+- **Styling**: Tailwind CSS
+- **UI Components**: Lucide React for icons
+- **Font**: Inter (Google Fonts)
+- **Deployment**: PM2 for production
+
+## 📁 Project Structure
+
+```
+portfolio/
+├── app/
+│   ├── components/
+│   │   ├── GameModal.js    # Game details modal
+│   │   ├── Hero.js         # Hero section
+│   │   ├── Navigation.js   # Navigation bar
+│   │   ├── Portfolio.js    # Game projects grid
+│   │   └── Resume.js       # Resume section
+│   ├── globals.css         # Global styles
+│   ├── layout.js           # Root layout
+│   └── page.js            # Main page with game data
+├── public/
+│   └── images/            # Image assets
+├── ecosystem.config.js    # PM2 configuration
+├── tailwind.config.js     # Tailwind configuration
+└── package.json          # Project dependencies
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js (Latest LTS version recommended)
+- npm or yarn
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/portfolio.git
+cd portfolio
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Install dependencies
+```bash
+npm install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Start development server
+```bash
+npm run dev
+```
 
-## Deploy on Vercel
+The site will be available at `http://localhost:3000`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Production Build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Build the application
+```bash
+npm run build
+```
+
+2. Start production server
+```bash
+npm start
+```
+
+### PM2 Deployment
+
+The project includes PM2 configuration for production deployment:
+
+```bash
+pm2 start ecosystem.config.js
+```
+
+## 💻 Development
+
+### Available Scripts
+
+- `npm run dev`: Starts development server with Turbopack
+- `npm run build`: Creates production build
+- `npm start`: Starts production server
+- `npm run lint`: Runs ESLint
+
+### Environment Variables
+
+The following environment variables can be set in `.env`:
+
+```env
+NODE_ENV=production
+PORT=3000
+```
+
+## 🎮 Adding New Games
+
+Add new games to the `games` array in `page.js`:
+
+```javascript
+{
+  id: uniqueId,
+  name: "Game Name",
+  image: "/path/to/image.png",
+  description: "Game description",
+  platform: "PC",
+  contributions: [
+    "Contribution 1",
+    "Contribution 2"
+  ],
+  projectInfo: {
+    technologies: ["Technology 1", "Technology 2"],
+    languages: ["Language 1"],
+    communication: ["Tool 1", "Tool 2"],
+    management: "Management Method"
+  },
+  links: {
+    store: "store-url",
+    website: "website-url",
+    twitter: "social-url"
+  },
+  gallery: [
+    "/path/to/screenshot1.jpg",
+    "/path/to/screenshot2.jpg"
+  ]
+}
+```
+
+## 🎨 Customization
+
+### Styling
+
+The project uses Tailwind CSS for styling. Customize the theme in `tailwind.config.js`:
+
+```javascript
+theme: {
+  extend: {
+    colors: {
+      background: "var(--background)",
+      foreground: "var(--foreground)",
+    },
+  },
+}
+```
+
+### Components
+
+All components are in the `app/components` directory and can be customized as needed:
+- `Navigation.js`: Header and navigation
+- `Hero.js`: Introduction section
+- `Portfolio.js`: Game projects grid
+- `GameModal.js`: Game details modal
+- `Resume.js`: Professional experience
+
+## 📱 Browser Support
+
+The portfolio is optimized for modern browsers and is fully responsive for mobile devices.
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 📧 Contact
+
+Cláudio Pinheiro - claudiosilva@pm.me
+
+Project Link: [[http://claudiopinheiro.pt](http://claudiopinheiro.pt)]
