@@ -12,7 +12,7 @@ const games = [
   {
     id: 1,
     name: "MyLittleExploree",
-    image: "/public/images/MainMenu_Background.png",
+    image: "/images/MainMenu_Background.png",  // Keeping the original image path
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     platform: "PC",
     contributions: [
