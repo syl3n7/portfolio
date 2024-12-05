@@ -89,6 +89,7 @@ export default function GameModal({ game, onClose }) {
                           src={image}
                           alt={`${game.name} screenshot ${index + 1}`}
                           fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
                           className="rounded-lg object-cover"
                         />
                       </div>
