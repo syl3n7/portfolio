@@ -15,21 +15,20 @@ const games = [
     description: "A charming exploration game where players discover a magical world filled with wonder and challenges.",
     platform: "PC",
     contributions: [
-      "Developed and enhanced game functionalities, including redesigning mechanics from the initial prototype",
+      "Managed the project and team, including organizing meetings and delegating tasks",
+      "Developed initial prototype and enhanced game functionalities, including tweaking mechanics",
       "Collaborated on bug fixing with the team to refine gameplay experience",
       "Optimized block and rock animations to enhance obstacle interactions",
       "Implemented core game systems and mechanics"
     ],
     projectInfo: {
-      technologies: ["Unity", "Cinemachine", "Post Processing Stack"],
+      technologies: ["Unity"],
       languages: ["C#"],
       communication: ["Discord", "Github Projects"],
       management: "Github"
     },
     links: {
-      store: "#",
-      website: "#",
-      twitter: "#"
+      website: "https://steelchunk.eu/games/MyLittleExploree/releases/latest.zip",
     },
     gallery: [
       "/api/placeholder/600/400",
@@ -40,25 +39,23 @@ const games = [
   },
   {
     id: 2,
-    name: "CatchMeIfYouCan",
+    name: "Game Launcher",
     image: "/api/placeholder/400/300",
-    description: "An exciting chase game that tests players' reflexes and strategic thinking.",
+    description: "Simple game launcher for launching games.\nThis laucher is still being worked on and the UI is not on its final form.",
     platform: "PC",
     contributions: [
-      "Developed and enhanced game functionalities, such as redesigning mechanics from the initial prototype",
-      "Bug fixing, with the rest of the team to adjust the game to our preferences",
-      "Helped to adjust certain animations from the blocks/rocks on the game so that they feel more like an obstacle"
+      "Developed the launcher from scratch",
+      "Implemented the core functionalities of the launcher",
+      "Developed the backend for the launcher",
     ],
     projectInfo: {
-      technologies: ["Unity"],
-      languages: ["C#"],
+      technologies: ["Processing, Unity"],
+      languages: ["Java", "C#"],
       communication: ["Discord", "Github Projects"],
       management: "Github"
     },
     links: {
-      store: "#",
-      website: "#",
-      twitter: "#"
+      website: "https://steelchunk.eu/launcher/releases/latest_stable.zip",
     },
     gallery: [
       "/api/placeholder/600/400",
@@ -71,23 +68,21 @@ const games = [
     id: 3,
     name: "CloudShooter",
     image: "/api/placeholder/400/300",
-    description: "A fast-paced aerial combat game set among the clouds.",
+    description: "A fast-paced aerial combat game set among the clouds.\nThis game is being currently ported from java to unity.",
     platform: "PC",
     contributions: [
-      "Developed and enhanced game functionalities, such as redesigning mechanics from the initial prototype",
-      "Bug fixing, with the rest of the team to adjust the game to our preferences",
-      "Helped to adjust certain animations from the blocks/rocks on the game so that they feel more like an obstacle"
+      "Developed the game from scratch, including core game systems and mechanics",
+      "Helped the art team to implement the art assets into the game",
+      "Level design, including creating and balancing levels for the game",
     ],
     projectInfo: {
-      technologies: ["Unity"],
-      languages: ["C#"],
+      technologies: ["Processing, Unity"],
+      languages: ["Java", "C#"],
       communication: ["Discord", "Github Projects"],
       management: "Github"
     },
     links: {
-      store: "#",
-      website: "#",
-      twitter: "#"
+      website: "https://steelchunk.eu/games/CloudShooter/releases/latest.zip",
     },
     gallery: [
       "/api/placeholder/600/400",
@@ -103,9 +98,10 @@ const games = [
     description: "An atmospheric adventure game set in a mysterious, mist-covered world.",
     platform: "PC",
     contributions: [
-      "Developed and enhanced game functionalities, such as redesigning mechanics from the initial prototype",
-      "Bug fixing, with the rest of the team to adjust the game to our preferences",
-      "Helped to adjust certain animations from the blocks/rocks on the game so that they feel more like an obstacle"
+      "Developed all the game mechanics and systems",
+      "Implemented the core gameplay features",
+      "Implemented animations and visual effects",
+      "Optimized the game for better performance",
     ],
     projectInfo: {
       technologies: ["Unity"],
@@ -114,9 +110,7 @@ const games = [
       management: "Github"
     },
     links: {
-      store: "#",
-      website: "#",
-      twitter: "#"
+      website: "https://steelchunk.eu/games/MistSolitude/releases/latest.zip",
     },
     gallery: [
       "/api/placeholder/600/400",
