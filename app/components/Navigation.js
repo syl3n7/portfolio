@@ -1,4 +1,3 @@
-// components/Navigation.js
 import { Mail } from 'lucide-react';
 
 export default function Navigation() {
@@ -7,7 +6,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
-            <h1 className="text-2xl font-bold text-blue-900">Cl&apos;udio Pinheiro</h1>
+            <h1 className="text-2xl font-bold text-blue-900">Cláudio Pinheiro</h1>
           </div>
           <div className="flex space-x-8">
             <a 
@@ -26,7 +25,7 @@ export default function Navigation() {
               href="#resume" 
               className="inline-flex items-center px-1 pt-1 text-blue-900 hover:text-blue-600 transition-colors"
             >
-              R&eacute;sum&eacute;
+              Résumé
             </a>
             <a 
               href="mailto:claudiosilva@pm.me" 
