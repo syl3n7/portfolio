@@ -1,4 +1,4 @@
-// components/GameModal.js
+
 import Image from 'next/image';
 
 export default function GameModal({ game, onClose }) {
@@ -83,15 +83,28 @@ export default function GameModal({ game, onClose }) {
                 <div>
                   <h4 className="text-2xl font-semibold text-blue-800 mb-6">Gallery</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {game.gallery.map((image, index) => (
+                    {game.gallery.map((item, index) => (
                       <div key={index} className="relative h-64">
-                        <Image 
-                          src={image}
-                          alt={`${game.name} screenshot ${index + 1}`}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                          className="rounded-lg object-cover"
-                        />
+                        {item.includes('youtu') ? (
+                          <iframe
+                            width="100%"
+                            height="100%"
+                            src={item.replace('watch?v=', 'embed/')}
+                            title={`Video ${index + 1}`}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            className="rounded-lg"
+                          ></iframe>
+                        ) : (
+                          <Image 
+                            src={item}
+                            alt={`${game.name} screenshot ${index + 1}`}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            className="rounded-lg object-cover"
+                          />
+                        )}
                       </div>
                     ))}
                   </div>

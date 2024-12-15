@@ -31,7 +31,7 @@ const games = [
       website: "https://steelchunk.eu/games/MyLittleExploree/releases/latest.zip",
     },
     gallery: [
-      "/api/placeholder/600/400",
+      "https://youtu.be/dZoKc4O0xWQ",
       "/api/placeholder/600/400",
       "/api/placeholder/600/400",
       "/api/placeholder/600/400"
@@ -52,7 +52,7 @@ const games = [
       technologies: ["Processing, Unity"],
       languages: ["Java", "C#"],
       communication: ["Discord", "Github Projects"],
-      management: "Github"
+      management: "Forgejo"
     },
     links: {
       website: "https://steelchunk.eu/launcher/releases/latest_stable.zip",
@@ -107,7 +107,7 @@ const games = [
       technologies: ["Unity"],
       languages: ["C#"],
       communication: ["Discord", "Github Projects"],
-      management: "Github"
+      management: "SyncThing"
     },
     links: {
       website: "https://steelchunk.eu/games/MistSolitude/releases/latest.zip",
