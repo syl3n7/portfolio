@@ -1,11 +1,18 @@
-
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 export default function ImageCarousel({ images, initialIndex, onClose, gameName }) {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [isVideo, setIsVideo] = useState(false);
+
+  const nextImage = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  }, [images.length]);
+
+  const prevImage = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  }, [images.length]);
 
   useEffect(() => {
     const handleKeyPress = (e) => {
@@ -16,7 +23,7 @@ export default function ImageCarousel({ images, initialIndex, onClose, gameName 
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [currentIndex]);
+  }, [onClose, prevImage, nextImage]);
 
   useEffect(() => {
     setIsVideo(images[currentIndex].includes('youtu'));
@@ -27,20 +34,12 @@ export default function ImageCarousel({ images, initialIndex, onClose, gameName 
     };
   }, [currentIndex, images]);
 
-  const getVideoEmbedUrl = (url) => {
+  const getVideoEmbedUrl = useCallback((url) => {
     const videoId = url.includes('youtu.be') 
       ? url.split('youtu.be/')[1]
       : url.split('v=')[1]?.split('&')[0];
     return videoId ? `https://www.youtube.com/embed/${videoId}` : null;
-  };
-
-  const nextImage = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
+  }, []);
 
   return (
     <div 
