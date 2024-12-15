@@ -32,9 +32,9 @@ const games = [
     },
     gallery: [
       "https://youtu.be/dZoKc4O0xWQ",
-      "/api/placeholder/600/400",
-      "/api/placeholder/600/400",
-      "/api/placeholder/600/400"
+      "/images/MLE_Main.png",
+      "/images/MLE_Pause.png",
+      "/images/MLE_Credits.png"
     ]
   },
   {
