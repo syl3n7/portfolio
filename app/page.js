@@ -46,7 +46,7 @@ const games = [
     contributions: [
       "Developed the launcher from scratch",
       "Implemented the core functionalities of the launcher",
-      "Developed the backend for the launcher",
+      "Auto updates the games before launch",
     ],
     projectInfo: {
       technologies: ["Processing, Unity"],
@@ -58,10 +58,7 @@ const games = [
       website: "https://steelchunk.eu/launcher/releases/latest_stable.zip",
     },
     gallery: [
-      "/api/placeholder/600/400",
-      "/api/placeholder/600/400",
-      "/api/placeholder/600/400",
-      "/api/placeholder/600/400"
+      "/images/Launcher_Main.png"
     ]
   },
   {

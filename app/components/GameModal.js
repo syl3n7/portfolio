@@ -135,7 +135,7 @@ export default function GameModal({ game, onClose }) {
                       rel="noopener noreferrer"
                       className="text-blue-600 hover:text-blue-800"
                     >
-                      Website link
+                      Download link
                     </a>
                   </div>
                 )}
