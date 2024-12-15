@@ -1,6 +1,18 @@
 import Image from 'next/image';
 
 export default function GameModal({ game, onClose }) {
+  // Function to handle YouTube URLs and return proper embed URL
+  const getVideoEmbedUrl = (url) => {
+    if (!url.includes('youtu')) return null;
+    
+    // Handle both youtu.be and youtube.com URLs
+    const videoId = url.includes('youtu.be') 
+      ? url.split('youtu.be/')[1]
+      : url.split('v=')[1]?.split('&')[0];
+      
+    return videoId ? `https://www.youtube.com/embed/${videoId}` : null;
+  };
+
   return (
     <div 
       className="fixed inset-0 bg-blue-900/50 backdrop-blur-sm z-50"
@@ -10,7 +22,7 @@ export default function GameModal({ game, onClose }) {
         }
       }}
     >
-      <div className="h-[100vh] w-full overflow-y-auto">
+      <div className="h-screen w-full overflow-y-auto">
         <div className="min-h-full flex items-center justify-center p-4">
           <div 
             className="relative bg-white/90 backdrop-blur-sm rounded-xl w-full max-w-6xl mx-auto shadow-2xl border border-blue-100"
@@ -29,7 +41,7 @@ export default function GameModal({ game, onClose }) {
               </h3>
 
               <div className="prose prose-lg max-w-none">
-                <p className="text-blue-800 text-xl">{game.description}</p>
+                <p className="text-blue-800 text-xl whitespace-pre-line">{game.description}</p>
               </div>
 
               {game.contributions && (
@@ -84,17 +96,17 @@ export default function GameModal({ game, onClose }) {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {game.gallery.map((item, index) => (
                       <div key={index} className="relative h-64">
-                        {item.includes('youtu') ? (
+                        {getVideoEmbedUrl(item) ? (
                           <iframe
                             width="100%"
                             height="100%"
-                            src={item.replace('watch?v=', 'embed/')}
+                            src={getVideoEmbedUrl(item)}
                             title={`Video ${index + 1}`}
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                             className="rounded-lg"
-                          ></iframe>
+                          />
                         ) : (
                           <Image 
                             src={item}
@@ -112,7 +124,14 @@ export default function GameModal({ game, onClose }) {
 
               {game.links && (
                 <div className="flex gap-4 text-lg">
-                  <a href={game.links.website} className="text-blue-600 hover:text-blue-800">Website link</a>
+                  <a 
+                    href={game.links.website} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800"
+                  >
+                    Website link
+                  </a>
                 </div>
               )}
             </div>
