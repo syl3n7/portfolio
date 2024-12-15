@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 
 export default function GameModal({ game, onClose }) {
@@ -113,11 +112,7 @@ export default function GameModal({ game, onClose }) {
 
               {game.links && (
                 <div className="flex gap-4 text-lg">
-                  <a href={game.links.store} className="text-blue-600 hover:text-blue-800">Store page</a>
-                  <span className="text-blue-300">|</span>
                   <a href={game.links.website} className="text-blue-600 hover:text-blue-800">Website link</a>
-                  <span className="text-blue-300">|</span>
-                  <a href={game.links.twitter} className="text-blue-600 hover:text-blue-800">Twitter/X</a>
                 </div>
               )}
             </div>
