@@ -102,7 +102,7 @@ export default function GameModal({ game, onClose }) {
                           {item.includes('youtu') ? (
                             <div className="relative w-full h-full">
                               <Image 
-                                src="/api/placeholder/600/400"
+                                src="/images/MLE_Thumb.png"
                                 alt={`Video thumbnail ${index + 1}`}
                                 fill
                                 className="rounded-lg object-cover"

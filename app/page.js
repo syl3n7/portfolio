@@ -24,8 +24,8 @@ const games = [
     projectInfo: {
       technologies: ["Unity"],
       languages: ["C#"],
-      communication: ["Discord", "Github Projects"],
-      management: "Github"
+      communication: ["Discord"],
+      management: "Github Projects"
     },
     links: {
       website: "https://steelchunk.eu/games/MyLittleExploree/releases/latest.zip",
@@ -49,10 +49,10 @@ const games = [
       "Auto updates the games before launch",
     ],
     projectInfo: {
-      technologies: ["Processing, Unity"],
-      languages: ["Java", "C#"],
-      communication: ["Discord", "Github Projects"],
-      management: "Forgejo"
+      technologies: ["Unity"],
+      languages: ["C#"],
+      communication: ["Discord"],
+      management: "Forgejo, Plane"
     },
     links: {
       website: "https://steelchunk.eu/launcher/releases/latest_stable.zip",
@@ -75,18 +75,12 @@ const games = [
     projectInfo: {
       technologies: ["Processing, Unity"],
       languages: ["Java", "C#"],
-      communication: ["Discord", "Github Projects"],
-      management: "Github"
+      communication: ["Discord"],
+      management: "Github Projects"
     },
     links: {
       website: "https://steelchunk.eu/games/CloudShooter/releases/latest.zip",
-    },
-    gallery: [
-      "/api/placeholder/600/400",
-      "/api/placeholder/600/400",
-      "/api/placeholder/600/400",
-      "/api/placeholder/600/400"
-    ]
+    }
   },
   {
     id: 4,
@@ -103,18 +97,12 @@ const games = [
     projectInfo: {
       technologies: ["Unity"],
       languages: ["C#"],
-      communication: ["Discord", "Github Projects"],
-      management: "SyncThing"
+      communication: ["Discord"],
+      management: "Github Projects"
     },
     links: {
       website: "https://steelchunk.eu/games/MistSolitude/releases/latest.zip",
-    },
-    gallery: [
-      "/api/placeholder/600/400",
-      "/api/placeholder/600/400",
-      "/api/placeholder/600/400",
-      "/api/placeholder/600/400"
-    ]
+    }
   }
 ];
 
