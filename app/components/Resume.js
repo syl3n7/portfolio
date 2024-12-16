@@ -10,11 +10,13 @@ export default function Resume() {
           <div className="mb-8">
             <h3 className="text-2xl font-semibold mb-4 text-blue-800">Skills</h3>
             <ul className="space-y-2 text-blue-900 bg-blue-50 rounded-lg p-6">
+              <li>Problem solving</li>
               <li>Adobe Creative Suite</li>
               <li>Microsoft Office Suite</li>
               <li>Unity Engine for creating tools and games</li>
-              <li>Problem solving</li>
               <li>Programming in C#, .Net, Java, C++</li>
+              <li>Experience with Docker to deploy apps</li>
+              <li>Experience with Proxmox to manage and deploy systems/ isolated apps</li>
               <li>Installation and configuration of networks</li>
               <li>Installation and configuration of operating systems</li>
               <li>Maintenance and configuration of servers and desktops</li>
