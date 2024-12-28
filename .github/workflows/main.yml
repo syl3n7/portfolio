@@ -22,10 +22,4 @@ jobs:
         run: npm run build
 
       - name: Deploy
-        with:
-          script: |
-            cd portfolio # Specify the path to your app directory on the server
-            git pull
-            npm install
-            npm run build
-            pm2 restart ecosystem.config.js # Replace with your PM2 config
+        run: cd portfolio && git pull && npm install && npm run build && pm2 restart ecosystem.config.js
