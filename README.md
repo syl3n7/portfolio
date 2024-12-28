@@ -1,4 +1,4 @@
-[![Deployment](https://github.com/syl3n7/portfolio/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/syl3n7/portfolio/actions/workflows/main.yml)
+[![HomeLab Deployment](https://github.com/syl3n7/portfolio/actions/workflows/main.yml/badge.svg)](https://github.com/syl3n7/portfolio/actions/workflows/main.yml)
 
 # Game Developer Portfolio
 
