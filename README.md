@@ -1,3 +1,5 @@
+[![Deployment](https://github.com/syl3n7/portfolio/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/syl3n7/portfolio/actions/workflows/main.yml)
+
 # Game Developer Portfolio
 
 A modern, responsive portfolio website built with Next.js 15 and Tailwind CSS, showcasing game development projects and professional experience. Features a clean, minimalist design with a focus on showcasing interactive game projects.
