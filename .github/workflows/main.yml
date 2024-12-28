@@ -28,11 +28,11 @@ jobs:
         
       - name: Deploy with PM2
         run: |
+          git pull
           if ! command -v pm2 &> /dev/null; then
             echo "PM2 is not installed"
             exit 1
           fi
-          git pull
           npm ci
           npm run build
           pm2 restart ecosystem.config.js
