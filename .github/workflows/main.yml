@@ -32,7 +32,6 @@ jobs:
             echo "PM2 is not installed"
             exit 1
           fi
-          cd portfolio || exit 1
           git pull
           npm ci
           npm run build
