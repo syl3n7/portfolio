@@ -1,6 +1,5 @@
 name: HomeLab Deployment
 
-# Trigger this workflow on pushes to the specified branch
 on:
   push:
     branches:
@@ -10,16 +9,30 @@ jobs:
   deploy:
     runs-on: self-hosted
     environment: deployment
-
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # or your preferred version
+
       - name: Install dependencies
-        run: npm install
+        run: npm ci # using ci instead of install for more reliable builds
 
       - name: Build Next.js app
         run: npm run build
-
-      - name: Deploy
-        run: cd portfolio && git pull && npm install && npm run build && pm2 restart ecosystem.config.js
+        
+      - name: Deploy with PM2
+        run: |
+          if ! command -v pm2 &> /dev/null; then
+            echo "PM2 is not installed"
+            exit 1
+          fi
+          cd portfolio || exit 1
+          git pull
+          npm ci
+          npm run build
+          pm2 restart ecosystem.config.js
