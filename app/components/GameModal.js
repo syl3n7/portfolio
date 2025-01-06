@@ -130,6 +130,14 @@ export default function GameModal({ game, onClose }) {
                 {game.links && (
                   <div className="flex gap-4 text-lg">
                     <a 
+                      href={game.links.github} 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800"
+                    >
+                      Github link
+                    </a>
+                    <a 
                       href={game.links.website} 
                       target="_blank"
                       rel="noopener noreferrer"

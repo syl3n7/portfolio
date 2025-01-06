@@ -10,25 +10,22 @@ import GameModal from './components/GameModal';
 const games = [
   {
     id: 1,
-    name: "MyLittleExploree",
+    name: "Open Weather Map Unity Project",
     image: "/images/MainMenu_Background.png",
-    description: "A charming exploration game where players discover a magical world filled with wonder and challenges.",
+    description: "API that bridges open weather map with Geonames.",
     platform: "PC",
     contributions: [
-      "Managed the project and team, including organizing meetings and delegating tasks",
-      "Developed initial prototype and enhanced game functionalities, including tweaking mechanics",
-      "Collaborated on bug fixing with the team to refine gameplay experience",
-      "Optimized block and rock animations to enhance obstacle interactions",
-      "Implemented core game systems and mechanics"
+      "Developed everything from scratch, but the Class serialization that was teached at uni.",
     ],
     projectInfo: {
       technologies: ["Unity"],
       languages: ["C#"],
-      communication: ["Discord"],
-      management: "Github Projects"
+      communication: ["NA"],
+      management: "NA"
     },
     links: {
-      website: "https://steelchunk.eu/games/MyLittleExploree/releases/latest.zip",
+      website: "https://github.com/syl3n7/APAI-OWM-Fork/releases/download/v0.7/APAIProject_OpenWeatherMap.zip",
+      github: "https://github.com/syl3n7/APAI-OWM-Fork/tree/main",
     },
     gallery: [
       "https://youtu.be/dZoKc4O0xWQ",
