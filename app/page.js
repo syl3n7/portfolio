@@ -11,7 +11,7 @@ const games = [
   {
     id: 1,
     name: "Open Weather Map Unity Project",
-    image: "/images/MainMenu_Background.png",
+    image: "/images/bg.jpg",
     description: "API that bridges open weather map with Geonames.",
     platform: "PC",
     contributions: [
@@ -28,10 +28,8 @@ const games = [
       github: "https://github.com/syl3n7/APAI-OWM-Fork",
     },
     gallery: [
-      "https://youtu.be/dZoKc4O0xWQ",
-      "/images/MLE_Main.png",
-      "/images/MLE_Pause.png",
-      "/images/MLE_Credits.png"
+      "/images/captura1.png",
+      "/images/captura2.png"
     ]
   },
   {
