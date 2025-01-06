@@ -14,7 +14,22 @@ export default function RootLayout({ children }) {
       <head>
         <meta charSet="utf-8" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <footer className="fixed bottom-0 w-full py-4 text-center bg-white bg-opacity-90">
+          <p className="text-sm text-gray-600">
+            made with love from Cláudio - 
+            <a 
+              href="https://github.com/syl3n7/portfolio" 
+              className="text-blue-600 hover:text-blue-800 ml-1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+          </p>
+        </footer>
+      </body>
     </html>
   )
 }
