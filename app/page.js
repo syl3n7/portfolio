@@ -25,7 +25,7 @@ const games = [
     },
     links: {
       website: "https://github.com/syl3n7/APAI-OWM-Fork/releases/download/v0.7/APAIProject_OpenWeatherMap.zip",
-      github: "https://github.com/syl3n7/APAI-OWM-Fork/tree/main",
+      github: "https://github.com/syl3n7/APAI-OWM-Fork",
     },
     gallery: [
       "https://youtu.be/dZoKc4O0xWQ",
@@ -37,7 +37,7 @@ const games = [
   {
     id: 2,
     name: "Game Launcher",
-    image: "/api/placeholder/400/300",
+    image: "/images/game-launcher-styled.svg",
     description: "Simple game launcher for launching games.\nThis laucher is still being worked on and the UI is not on its final form.",
     platform: "PC",
     contributions: [
@@ -53,6 +53,7 @@ const games = [
     },
     links: {
       website: "https://steelchunk.eu/launcher/releases/latest_stable.zip",
+      github: "https://github.com/syl3n7/Game_Launcher",
     },
     gallery: [
       "/images/Launcher_Main.png"
@@ -77,6 +78,7 @@ const games = [
     },
     links: {
       website: "https://steelchunk.eu/games/CloudShooter/releases/latest.zip",
+      github: "https://github.com/syl3n7/CloudShooter",
     }
   },
   {
@@ -99,6 +101,7 @@ const games = [
     },
     links: {
       website: "https://steelchunk.eu/games/MistSolitude/releases/latest.zip",
+      github: "https://github.com/Mariana041/MistSolitude",
     }
   }
 ];
