@@ -22,7 +22,7 @@ export default function Navigation() {
               Portfolio
             </a>
             <a 
-              href="/images/resume.png" 
+              href="/docs/resume.pdf" 
               className="inline-flex items-center px-1 pt-1 text-blue-900 hover:text-blue-600 transition-colors"
             >
               Résumé
