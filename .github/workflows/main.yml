@@ -3,7 +3,13 @@ name: HomeLab Deployment
 on:
   push:
     branches:
-      - main
+      - main  # Replace with your branch name
+
+# Workflow-level permissions (applies to all jobs)
+permissions:
+  contents: read  # Allows reading the repository contents
+  actions: write  # Allows writing to GitHub Actions (e.g., uploading artifacts)
+  checks: write   # Allows writing to checks (e.g., status checks)
 
 jobs:
   deploy:
@@ -38,3 +44,18 @@ jobs:
           npm ci
           npm run build
           pm2 restart ecosystem.config.js
+
+  test:
+    runs-on: ubuntu-latest
+
+    # Job-level permissions (overrides workflow-level permissions for this job)
+    permissions:
+      contents: read  # Only read access to repository contents
+      pull-requests: write  # Allows writing to pull requests
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run tests
+        run: npm test
