@@ -64,7 +64,7 @@ const games = [
   {
     id: 3,
     name: "CloudShooter",
-    image: "/api/placeholder/400/300",
+    image: "/images/background1080p.png",
     description: "A fast-paced aerial combat game set among the clouds.\nThis game is being currently ported from java to unity.",
     platform: "PC",
     contributions: [
