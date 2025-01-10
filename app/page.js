@@ -12,10 +12,14 @@ const games = [
     id: 1,
     name: "Open Weather Map Unity Project",
     image: "/images/bg.jpg",
-    description: "API that bridges open weather map with Geonames.",
+    description: "API that bridges open weather map with Geonames.\nThe purpose of this bridge is to find the latitude and longitude provided from geonames when the location is entered and only then we send the data request to open weather map, so that we fetch all the text data and textures for the images.",
     platform: "PC",
     contributions: [
-      "Developed everything from scratch, but the Class serialization that was teached at uni.",
+      "Open weather map and geonames classes serializations",
+      "Handling of webrequests to fetch the data",
+      "Handling of the data to send for each part of the UI",
+      "UI for entering the app, with background looping video",
+      "UI for the information provided to the final user",
     ],
     projectInfo: {
       technologies: ["Unity"],
@@ -29,7 +33,7 @@ const games = [
     },
     gallery: [
       "/images/captura1.png",
-      "/images/captura2.png"
+      "/images/captura2.png",
     ]
   },
   {
