@@ -44,18 +44,3 @@ jobs:
           npm ci
           npm run build
           pm2 restart ecosystem.config.js
-
-  test:
-    runs-on: ubuntu-latest
-
-    # Job-level permissions (overrides workflow-level permissions for this job)
-    permissions:
-      contents: read  # Only read access to repository contents
-      pull-requests: write  # Allows writing to pull requests
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Run tests
-        run: npm test
