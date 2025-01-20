@@ -1,15 +1,30 @@
 import { useState } from 'react';
-import Image from 'next/image';
 import { 
-  Box, 
-  Heading, 
-  Text, 
-  ListItem, 
-  Button, 
-  Grid, 
-  UnorderedList  // Add this import
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalCloseButton,
+  Box,
+  Heading,
+  Text,
+  UnorderedList,
+  ListItem,
+  Button,
+  SimpleGrid,
+  Tag,
+  HStack,
+  VStack,
+  Link,
+  Image,
+  Divider
 } from '@chakra-ui/react';
+import { ExternalLinkIcon, LinkIcon } from '@chakra-ui/icons'; // Changed CodeIcon to LinkIcon
+import { motion, AnimatePresence } from 'framer-motion';
 import ImageCarousel from './ImageCarousel';
+
+const MotionBox = motion(Box);
 
 export default function GameModal({ game, onClose }) {
   const [carouselOpen, setCarouselOpen] = useState(false);
@@ -21,205 +36,160 @@ export default function GameModal({ game, onClose }) {
   };
 
   return (
-    <>
-      <Box 
-        position="fixed" 
-        inset={0} 
-        bg="blue.900Alpha.50" 
-        backdropFilter="blur(10px)" 
-        zIndex={50}
-        onClick={(e) => {
-          if (e.target === e.currentTarget) {
-            onClose();
-          }
-        }}
+    <Modal isOpen={true} onClose={onClose} size="6xl" scrollBehavior="inside">
+      <ModalOverlay 
+        backdropFilter="blur(10px)"
+        bg="blackAlpha.600"
+      />
+      <ModalContent 
+        bg="whiteAlpha.900"
+        backdropFilter="blur(10px)"
+        rounded="2xl"
+        overflow="hidden"
+        my={4}
+        zIndex={1400}  // Ensure modal is below carousel
       >
-        <Box h="full" w="full" overflowY="auto">
-          <Box minH="full" display="flex" alignItems="center" justifyContent="center" p={4}>
+        <ModalHeader p={0}>
+          <Box 
+            position="relative" 
+            h={{ base: "200px", md: "300px" }}
+            overflow="hidden"
+          >
+            <Image
+              src={game.image}
+              alt={game.name}
+              objectFit="cover"
+              w="full"
+              h="full"
+            />
             <Box 
-              position="relative" 
-              bg="whiteAlpha.90" 
-              backdropFilter="blur(10px)" 
-              rounded="xl" 
-              w="full" 
-              maxW="6xl" 
-              mx="auto" 
-              shadow="2xl" 
-              border="1px" 
-              borderColor="blue.100"
-              onClick={(e) => e.stopPropagation()}
+              position="absolute"
+              bottom={0}
+              w="full"
+              bg="blackAlpha.700"
+              p={6}
+              backdropFilter="blur(10px)"
             >
-              <Button 
-                onClick={onClose}
-                position="absolute" 
-                top={-4} 
-                right={-4} 
-                w={10} 
-                h={10} 
-                display="flex" 
-                alignItems="center" 
-                justifyContent="center" 
-                color="white" 
-                bg="blue.600" 
-                _hover={{ bg: 'blue.700' }} 
-                rounded="full" 
-                shadow="lg" 
-                fontSize="2xl" 
-                transition="all 0.3s" 
-                zIndex={50}
-              >
-                &times;
-              </Button>
-
-              <Box p={8} lg={{ p: 12 }} spaceY={8}>
-                <Heading as="h3" size="2xl" color="blue.900">
-                  {game.name} | {game.platform || 'PC'}
-                </Heading>
-
-                <Box className="prose prose-lg max-w-none">
-                  <Text fontSize="xl" color="blue.800" whiteSpace="pre-line">{game.description}</Text>
-                </Box>
-
-                {game.contributions && (
-                  <Box>
-                    <Heading as="h4" size="lg" color="blue.800" mb={6}>What I worked on:</Heading>
-                    <UnorderedList spacing={4} fontSize="lg" color="blue.800">
-                      {game.contributions.map((contribution, index) => (
-                        <ListItem key={index} display="flex" alignItems="start">
-                          <Text mr={3} color="blue.600">&bull;</Text>
-                          <Text>{contribution}</Text>
-                        </ListItem>
-                      ))}
-                    </UnorderedList>
-                  </Box>
-                )}
-
-                {game.projectInfo && (
-                  <Box bg="blue.50" rounded="lg" p={6}>
-                    <Heading as="h4" size="lg" color="blue.800" mb={6}>Project Info</Heading>
-                    <Grid templateColumns={{ base: '1fr', md: '1fr 1fr' }} gap={6}>
-                      {game.projectInfo.technologies && (
-                        <Box>
-                          <Text fontWeight="medium" color="blue.900" fontSize="lg">Technologies</Text>
-                          <Text color="blue.800">{game.projectInfo.technologies.join(" | ")}</Text>
-                        </Box>
-                      )}
-                      {game.projectInfo.languages && (
-                        <Box>
-                          <Text fontWeight="medium" color="blue.900" fontSize="lg">Languages</Text>
-                          <Text color="blue.800">{game.projectInfo.languages.join(" | ")}</Text>
-                        </Box>
-                      )}
-                      {game.projectInfo.communication && (
-                        <Box>
-                          <Text fontWeight="medium" color="blue.900" fontSize="lg">QA & Communication</Text>
-                          <Text color="blue.800">{game.projectInfo.communication.join(" | ")}</Text>
-                        </Box>
-                      )}
-                      {game.projectInfo.management && (
-                        <Box>
-                          <Text fontWeight="medium" color="blue.900" fontSize="lg">Project Management</Text>
-                          <Text color="blue.800">{game.projectInfo.management}</Text>
-                        </Box>
-                      )}
-                    </Grid>
-                  </Box>
-                )}
-
-                {game.gallery && (
-                  <Box>
-                    <Heading as="h4" size="lg" color="blue.800" mb={6}>Gallery</Heading>
-                    <Grid templateColumns={{ base: '1fr', md: '1fr 1fr' }} gap={6}>
-                      {game.gallery.map((item, index) => (
-                        <Box 
-                          key={index} 
-                          position="relative" 
-                          h={64} 
-                          cursor="pointer" 
-                          _hover={{ opacity: 0.9 }} 
-                          transition="all 0.3s"
-                          onClick={() => openCarousel(index)}
-                        >
-                          {item.includes('youtu') ? (
-                            <Box position="relative" w="full" h="full">
-                              <Image 
-                                src="/images/MLE_Thumb.png"
-                                alt={`Video thumbnail ${index + 1}`}
-                                objectFit="cover"
-                                w="full"
-                                h="full"
-                                rounded="lg"
-                              />
-                              <Box position="absolute" inset={0} display="flex" alignItems="center" justifyContent="center" bg="blackAlpha.50" rounded="lg">
-                                <PlayIcon className="w-16 h-16 text-white" />
-                              </Box>
-                            </Box>
-                          ) : (
-                            <Image 
-                              src={item}
-                              alt={`${game.name} screenshot ${index + 1}`}
-                              objectFit="cover"
-                              w="full"
-                              h="full"
-                              rounded="lg"
-                            />
-                          )}
-                        </Box>
-                      ))}
-                    </Grid>
-                  </Box>
-                )}
-
-                {game.links && (
-                  <Box display="flex" gap={4} fontSize="lg">
-                    <Text 
-                      as="a" 
-                      href={game.links.github} 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      color="blue.600" 
-                      _hover={{ color: 'blue.800' }}
-                    >
-                      Github link
-                    </Text>
-                    <Text 
-                      as="a" 
-                      href={game.links.website} 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      color="blue.600" 
-                      _hover={{ color: 'blue.800' }}
-                    >
-                      Download link
-                    </Text>
-                  </Box>
-                )}
-              </Box>
+              <Heading color="white" size="xl">{game.name}</Heading>
             </Box>
           </Box>
-        </Box>
-      </Box>
+          <ModalCloseButton 
+            color="white" 
+            bg="blackAlpha.500" 
+            _hover={{ bg: "blackAlpha.700" }}
+          />
+        </ModalHeader>
 
-      {carouselOpen && (
-        <ImageCarousel
-          images={game.gallery}
-          initialIndex={initialImageIndex}
-          onClose={() => setCarouselOpen(false)}
-          gameName={game.name}
-        />
-      )}
-    </>
-  );
-}
+        <ModalBody p={8}>
+          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
+            <VStack align="stretch" spacing={6}>
+              <Box>
+                <Heading size="md" mb={4} color="blue.900">Description</Heading>
+                <Text whiteSpace="pre-line" color="blue.700">{game.description}</Text>
+              </Box>
 
-function PlayIcon({ className }) {
-  return (
-    <svg 
-      className={className} 
-      viewBox="0 0 24 24" 
-      fill="currentColor"
-    >
-      <path d="M8 5v14l11-7z" />
-    </svg>
+              <Box>
+                <Heading size="md" mb={4} color="blue.900">Contributions</Heading>
+                <UnorderedList spacing={2} color="blue.700">
+                  {game.contributions.map((contribution, index) => (
+                    <ListItem key={index}>{contribution}</ListItem>
+                  ))}
+                </UnorderedList>
+              </Box>
+            </VStack>
+
+            <VStack align="stretch" spacing={6}>
+              <Box>
+                <Heading size="md" mb={4} color="blue.900">Project Details</Heading>
+                <SimpleGrid columns={2} spacing={4}>
+                  <VStack align="start">
+                    <Text fontWeight="bold" color="blue.900">Technologies</Text>
+                    <HStack wrap="wrap" spacing={2}>
+                      {game.projectInfo.technologies.map((tech, index) => (
+                        <Tag key={index} colorScheme="blue" size="sm">{tech}</Tag>
+                      ))}
+                    </HStack>
+                  </VStack>
+
+                  <VStack align="start">
+                    <Text fontWeight="bold" color="blue.900">Languages</Text>
+                    <HStack wrap="wrap" spacing={2}>
+                      {game.projectInfo.languages.map((lang, index) => (
+                        <Tag key={index} colorScheme="green" size="sm">{lang}</Tag>
+                      ))}
+                    </HStack>
+                  </VStack>
+                </SimpleGrid>
+              </Box>
+
+              <Box>
+                <Heading size="md" mb={4} color="blue.900">Links</Heading>
+                <HStack spacing={4}>
+                  {game.links.website && (
+                    <Button 
+                      as={Link}
+                      href={game.links.website}
+                      isExternal
+                      leftIcon={<ExternalLinkIcon />}
+                      colorScheme="blue"
+                    >
+                      Visit Project
+                    </Button>
+                  )}
+                  {game.links.github && (
+                    <Button
+                      as={Link}
+                      href={game.links.github}
+                      isExternal
+                      leftIcon={<LinkIcon />}  // Changed from CodeIcon to LinkIcon
+                      colorScheme="gray"
+                    >
+                      View Code
+                    </Button>
+                  )}
+                </HStack>
+              </Box>
+
+              {game.gallery && game.gallery.length > 0 && (
+                <Box>
+                  <Heading size="md" mb={4} color="blue.900">Gallery</Heading>
+                  <SimpleGrid columns={{ base: 2, md: 3 }} spacing={4}>
+                    {game.gallery.map((image, index) => (
+                      <MotionBox
+                        key={index}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
+                        cursor="pointer"
+                        onClick={() => openCarousel(index)}
+                      >
+                        <Image
+                          src={image}
+                          alt={`${game.name} screenshot ${index + 1}`}
+                          rounded="md"
+                          w="full"
+                          h="100px"
+                          objectFit="cover"
+                        />
+                      </MotionBox>
+                    ))}
+                  </SimpleGrid>
+                </Box>
+              )}
+            </VStack>
+          </SimpleGrid>
+        </ModalBody>
+      </ModalContent>
+
+      <AnimatePresence>
+        {carouselOpen && (
+          <ImageCarousel
+            images={game.gallery}
+            initialIndex={initialImageIndex}
+            onClose={() => setCarouselOpen(false)}
+            gameName={game.name}
+          />
+        )}
+      </AnimatePresence>
+    </Modal>
   );
 }
