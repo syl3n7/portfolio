@@ -1,11 +1,12 @@
 'use client'
 
-import { useState, useEffect } from 'react';
-import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import Portfolio from './components/Portfolio';
-import Resume from './components/Resume';
-import GameModal from './components/GameModal';
+import { useState, useEffect } from 'react'
+import { Box, Container } from '@chakra-ui/react'
+import Navigation from './components/Navigation'
+import Hero from './components/Hero'
+import Portfolio from './components/Portfolio'
+import Resume from './components/Resume'
+import GameModal from './components/GameModal'
 
 const games = [
   {
@@ -137,27 +138,27 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
+    <Box minH="100vh" bgGradient="linear(to-br, blue.50, purple.50)">
       <Navigation />
       
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <Container maxW="7xl" px={{ base: 4, sm: 6, lg: 8 }} py={12}>
         <Hero />
         <Portfolio 
           games={games} 
           onGameSelect={handleGameSelect} 
         />
         <Resume />
-      </main>
+      </Container>
 
       {selectedGame && (
-        <div className="modal-wrapper">
+        <Box className="modal-wrapper">
           <GameModal 
             game={selectedGame} 
             onClose={handleCloseModal}
             onError={handleModalError}
           />
-        </div>
+        </Box>
       )}
-    </div>
-  );
+    </Box>
+  )
 }

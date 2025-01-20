@@ -1,84 +1,99 @@
-import { useState } from 'react';
-import { Mail, Menu, X } from 'lucide-react';
+'use client'
+
+import { useState } from 'react'
+import {
+  Box,
+  Flex,
+  Link,
+  IconButton,
+  Stack,
+  Text,
+  useDisclosure,
+  Container
+} from '@chakra-ui/react'
+import { HamburgerIcon, CloseIcon, EmailIcon } from '@chakra-ui/icons'
 
 export default function Navigation() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const { isOpen, onToggle } = useDisclosure()
 
   return (
-    <nav className="bg-white/70 backdrop-blur-md shadow-sm fixed top-0 w-full z-50 border-b border-blue-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex-shrink-0 flex items-center">
-            <h1 className="text-2xl font-bold text-blue-900">Cláudio Pinheiro</h1>
-          </div>
-          <div className="hidden md:flex space-x-8">
-            <a 
-              href="#" 
-              className="inline-flex items-center px-1 pt-1 text-blue-900 hover:text-blue-600 transition-colors"
-            >
+    <Box 
+      as="nav" 
+      position="fixed" 
+      w="full" 
+      zIndex={50} 
+      bg="whiteAlpha.700"
+      backdropFilter="blur(8px)"
+      borderBottom="1px"
+      borderColor="blue.100"
+    >
+      <Container maxW="7xl">
+        <Flex h={16} alignItems="center" justifyContent="space-between">
+          <Text fontSize="2xl" fontWeight="bold" color="blue.900">
+            Cláudio Pinheiro
+          </Text>
+
+          <Stack
+            display={{ base: 'none', md: 'flex' }}
+            direction="row"
+            spacing={8}
+          >
+            <Link href="#" color="blue.900" _hover={{ color: 'blue.600' }}>
               Home
-            </a>
-            <a 
-              href="#portfolio" 
-              className="inline-flex items-center px-1 pt-1 text-blue-900 hover:text-blue-600 transition-colors"
-            >
+            </Link>
+            <Link href="#portfolio" color="blue.900" _hover={{ color: 'blue.600' }}>
               Portfolio
-            </a>
-            <a 
-              href="/docs/resume.pdf" 
-              className="inline-flex items-center px-1 pt-1 text-blue-900 hover:text-blue-600 transition-colors"
-            >
+            </Link>
+            <Link href="/docs/resume.pdf" color="blue.900" _hover={{ color: 'blue.600' }}>
               Résumé
-            </a>
-            <a 
-              href="mailto:claudiosilva@pm.me" 
-              className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-900 hover:bg-blue-200 transition-colors"
+            </Link>
+            <Link
+              href="mailto:claudiosilva@pm.me"
+              px={3}
+              py={1}
+              borderRadius="full"
+              bg="blue.100"
+              color="blue.900"
+              _hover={{ bg: 'blue.200' }}
             >
-              <Mail className="w-5 h-5 mr-1" />
+              <EmailIcon mr={2} />
               Contact Me
-            </a>
-          </div>
-          <div className="md:hidden flex items-center">
-            <button onClick={toggleMenu} className="text-blue-900 hover:text-blue-600 transition-colors">
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-        </div>
-      </div>
-      {isMenuOpen && (
-        <div className="md:hidden bg-white/70 backdrop-blur-md shadow-sm border-b border-blue-100">
-          <div className="px-4 pt-2 pb-3 space-y-1">
-            <a 
-              href="#" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-blue-900 hover:text-blue-600 transition-colors"
-            >
+            </Link>
+          </Stack>
+
+          <IconButton
+            display={{ base: 'flex', md: 'none' }}
+            onClick={onToggle}
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            variant="ghost"
+            aria-label="Toggle Navigation"
+          />
+        </Flex>
+      </Container>
+
+      {/* Mobile menu */}
+      {isOpen && (
+        <Box 
+          display={{ base: 'block', md: 'none' }}
+          bg="whiteAlpha.700"
+          backdropFilter="blur(8px)"
+        >
+          <Stack spacing={4} py={2}>
+            <Link href="#" px={3} py={2} color="blue.900" _hover={{ color: 'blue.600' }}>
               Home
-            </a>
-            <a 
-              href="#portfolio" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-blue-900 hover:text-blue-600 transition-colors"
-            >
+            </Link>
+            <Link href="#portfolio" px={3} py={2} color="blue.900" _hover={{ color: 'blue.600' }}>
               Portfolio
-            </a>
-            <a 
-              href="/docs/resume.pdf" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-blue-900 hover:text-blue-600 transition-colors"
-            >
+            </Link>
+            <Link href="/docs/resume.pdf" px={3} py={2} color="blue.900" _hover={{ color: 'blue.600' }}>
               Résumé
-            </a>
-            <a 
-              href="mailto:claudiosilva@pm.me" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-blue-900 hover:text-blue-600 transition-colors"
-            >
+            </Link>
+            <Link href="mailto:claudiosilva@pm.me" px={3} py={2} color="blue.900" _hover={{ color: 'blue.600' }}>
               Contact Me
-            </a>
-          </div>
-        </div>
+            </Link>
+          </Stack>
+        </Box>
       )}
-    </nav>
-  );
+    </Box>
+  )
 }
