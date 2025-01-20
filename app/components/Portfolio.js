@@ -1,31 +1,41 @@
-// components/Portfolio.js
-import Image from 'next/image';
+import { Box, Heading, SimpleGrid, Image, Text } from '@chakra-ui/react';
 
 export default function Portfolio({ games, onGameSelect }) {
   return (
-    <section id="portfolio" className="py-20">
-      <h2 className="text-3xl font-bold mb-8 text-blue-900">Portfolio</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <Box as="section" id="portfolio" py={20}>
+      <Heading as="h2" size="xl" mb={8} color="blue.900">Portfolio</Heading>
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
         {games.map((game) => (
-          <div 
+          <Box 
             key={game.id} 
-            className="bg-white/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition hover:scale-105 hover:shadow-xl border border-blue-100"
+            bg="whiteAlpha.80" 
+            backdropFilter="blur(10px)" 
+            rounded="lg" 
+            shadow="lg" 
+            overflow="hidden" 
+            cursor="pointer" 
+            transform="scale(1.05)" 
+            transition="all 0.3s" 
+            _hover={{ shadow: 'xl' }} 
+            border="1px" 
+            borderColor="blue.100"
             onClick={() => onGameSelect(game)}
           >
-            <div className="relative w-full h-48">
+            <Box position="relative" w="full" h="48">
               <Image 
                 src={game.image} 
                 alt={game.name}
-                fill
-                className="object-cover"
+                objectFit="cover"
+                w="full"
+                h="full"
               />
-            </div>
-            <div className="p-4">
-              <h3 className="text-xl font-semibold text-blue-900">{game.name}</h3>
-            </div>
-          </div>
+            </Box>
+            <Box p={4}>
+              <Heading as="h3" size="md" color="blue.900">{game.name}</Heading>
+            </Box>
+          </Box>
         ))}
-      </div>
-    </section>
+      </SimpleGrid>
+    </Box>
   );
 }

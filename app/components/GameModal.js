@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
+import { Box, Heading, Text, ListItem, Button, Grid } from '@chakra-ui/react';
 import ImageCarousel from './ImageCarousel';
 
 export default function GameModal({ game, onClose }) {
@@ -13,145 +14,183 @@ export default function GameModal({ game, onClose }) {
 
   return (
     <>
-      <div 
-        className="fixed inset-0 bg-blue-900/50 backdrop-blur-sm z-50"
+      <Box 
+        position="fixed" 
+        inset={0} 
+        bg="blue.900Alpha.50" 
+        backdropFilter="blur(10px)" 
+        zIndex={50}
         onClick={(e) => {
           if (e.target === e.currentTarget) {
             onClose();
           }
         }}
       >
-        <div className="h-screen w-full overflow-y-auto">
-          <div className="min-h-full flex items-center justify-center p-4">
-            <div 
-              className="relative bg-white/90 backdrop-blur-sm rounded-xl w-full max-w-6xl mx-auto shadow-2xl border border-blue-100"
+        <Box h="full" w="full" overflowY="auto">
+          <Box minH="full" display="flex" alignItems="center" justifyContent="center" p={4}>
+            <Box 
+              position="relative" 
+              bg="whiteAlpha.90" 
+              backdropFilter="blur(10px)" 
+              rounded="xl" 
+              w="full" 
+              maxW="6xl" 
+              mx="auto" 
+              shadow="2xl" 
+              border="1px" 
+              borderColor="blue.100"
               onClick={(e) => e.stopPropagation()}
             >
-              <button 
+              <Button 
                 onClick={onClose}
-                className="absolute -top-4 -right-4 w-10 h-10 flex items-center justify-center text-white bg-blue-600 hover:bg-blue-700 rounded-full shadow-lg text-2xl transition-colors z-50"
+                position="absolute" 
+                top={-4} 
+                right={-4} 
+                w={10} 
+                h={10} 
+                display="flex" 
+                alignItems="center" 
+                justifyContent="center" 
+                color="white" 
+                bg="blue.600" 
+                _hover={{ bg: 'blue.700' }} 
+                rounded="full" 
+                shadow="lg" 
+                fontSize="2xl" 
+                transition="all 0.3s" 
+                zIndex={50}
               >
                 &times;
-              </button>
+              </Button>
 
-              <div className="p-8 lg:p-12 space-y-8">
-                <h3 className="text-4xl font-bold text-blue-900">
+              <Box p={8} lg={{ p: 12 }} spaceY={8}>
+                <Heading as="h3" size="2xl" color="blue.900">
                   {game.name} | {game.platform || 'PC'}
-                </h3>
+                </Heading>
 
-                <div className="prose prose-lg max-w-none">
-                  <p className="text-blue-800 text-xl whitespace-pre-line">{game.description}</p>
-                </div>
+                <Box className="prose prose-lg max-w-none">
+                  <Text fontSize="xl" color="blue.800" whiteSpace="pre-line">{game.description}</Text>
+                </Box>
 
                 {game.contributions && (
-                  <div>
-                    <h4 className="text-2xl font-semibold text-blue-800 mb-6">What I worked on:</h4>
-                    <ul className="space-y-4 text-lg text-blue-800">
+                  <Box>
+                    <Heading as="h4" size="lg" color="blue.800" mb={6}>What I worked on:</Heading>
+                    <UnorderedList spacing={4} fontSize="lg" color="blue.800">
                       {game.contributions.map((contribution, index) => (
-                        <li key={index} className="flex items-start">
-                          <span className="mr-3 text-blue-600">&bull;</span>
-                          <span>{contribution}</span>
-                        </li>
+                        <ListItem key={index} display="flex" alignItems="start">
+                          <Text mr={3} color="blue.600">&bull;</Text>
+                          <Text>{contribution}</Text>
+                        </ListItem>
                       ))}
-                    </ul>
-                  </div>
+                    </UnorderedList>
+                  </Box>
                 )}
 
                 {game.projectInfo && (
-                  <div className="bg-blue-50 rounded-lg p-6">
-                    <h4 className="text-2xl font-semibold text-blue-800 mb-6">Project Info</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <Box bg="blue.50" rounded="lg" p={6}>
+                    <Heading as="h4" size="lg" color="blue.800" mb={6}>Project Info</Heading>
+                    <Grid templateColumns={{ base: '1fr', md: '1fr 1fr' }} gap={6}>
                       {game.projectInfo.technologies && (
-                        <div>
-                          <p className="font-medium text-blue-900 text-lg">Technologies</p>
-                          <p className="text-blue-800">{game.projectInfo.technologies.join(" | ")}</p>
-                        </div>
+                        <Box>
+                          <Text fontWeight="medium" color="blue.900" fontSize="lg">Technologies</Text>
+                          <Text color="blue.800">{game.projectInfo.technologies.join(" | ")}</Text>
+                        </Box>
                       )}
                       {game.projectInfo.languages && (
-                        <div>
-                          <p className="font-medium text-blue-900 text-lg">Languages</p>
-                          <p className="text-blue-800">{game.projectInfo.languages.join(" | ")}</p>
-                        </div>
+                        <Box>
+                          <Text fontWeight="medium" color="blue.900" fontSize="lg">Languages</Text>
+                          <Text color="blue.800">{game.projectInfo.languages.join(" | ")}</Text>
+                        </Box>
                       )}
                       {game.projectInfo.communication && (
-                        <div>
-                          <p className="font-medium text-blue-900 text-lg">QA & Communication</p>
-                          <p className="text-blue-800">{game.projectInfo.communication.join(" | ")}</p>
-                        </div>
+                        <Box>
+                          <Text fontWeight="medium" color="blue.900" fontSize="lg">QA & Communication</Text>
+                          <Text color="blue.800">{game.projectInfo.communication.join(" | ")}</Text>
+                        </Box>
                       )}
                       {game.projectInfo.management && (
-                        <div>
-                          <p className="font-medium text-blue-900 text-lg">Project Management</p>
-                          <p className="text-blue-800">{game.projectInfo.management}</p>
-                        </div>
+                        <Box>
+                          <Text fontWeight="medium" color="blue.900" fontSize="lg">Project Management</Text>
+                          <Text color="blue.800">{game.projectInfo.management}</Text>
+                        </Box>
                       )}
-                    </div>
-                  </div>
+                    </Grid>
+                  </Box>
                 )}
 
                 {game.gallery && (
-                  <div>
-                    <h4 className="text-2xl font-semibold text-blue-800 mb-6">Gallery</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <Box>
+                    <Heading as="h4" size="lg" color="blue.800" mb={6}>Gallery</Heading>
+                    <Grid templateColumns={{ base: '1fr', md: '1fr 1fr' }} gap={6}>
                       {game.gallery.map((item, index) => (
-                        <div 
+                        <Box 
                           key={index} 
-                          className="relative h-64 cursor-pointer hover:opacity-90 transition-opacity"
+                          position="relative" 
+                          h={64} 
+                          cursor="pointer" 
+                          _hover={{ opacity: 0.9 }} 
+                          transition="all 0.3s"
                           onClick={() => openCarousel(index)}
                         >
                           {item.includes('youtu') ? (
-                            <div className="relative w-full h-full">
+                            <Box position="relative" w="full" h="full">
                               <Image 
                                 src="/images/MLE_Thumb.png"
                                 alt={`Video thumbnail ${index + 1}`}
-                                fill
-                                className="rounded-lg object-cover"
-                                sizes="(max-width: 768px) 100vw, 50vw"
+                                objectFit="cover"
+                                w="full"
+                                h="full"
+                                rounded="lg"
                               />
-                              <div className="absolute inset-0 flex items-center justify-center bg-black/50 rounded-lg">
+                              <Box position="absolute" inset={0} display="flex" alignItems="center" justifyContent="center" bg="blackAlpha.50" rounded="lg">
                                 <PlayIcon className="w-16 h-16 text-white" />
-                              </div>
-                            </div>
+                              </Box>
+                            </Box>
                           ) : (
                             <Image 
                               src={item}
                               alt={`${game.name} screenshot ${index + 1}`}
-                              fill
-                              sizes="(max-width: 768px) 100vw, 50vw"
-                              className="rounded-lg object-cover"
+                              objectFit="cover"
+                              w="full"
+                              h="full"
+                              rounded="lg"
                             />
                           )}
-                        </div>
+                        </Box>
                       ))}
-                    </div>
-                  </div>
+                    </Grid>
+                  </Box>
                 )}
 
                 {game.links && (
-                  <div className="flex gap-4 text-lg">
-                    <a 
+                  <Box display="flex" gap={4} fontSize="lg">
+                    <Text 
+                      as="a" 
                       href={game.links.github} 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-800"
+                      color="blue.600" 
+                      _hover={{ color: 'blue.800' }}
                     >
                       Github link
-                    </a>
-                    <a 
+                    </Text>
+                    <Text 
+                      as="a" 
                       href={game.links.website} 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-800"
+                      color="blue.600" 
+                      _hover={{ color: 'blue.800' }}
                     >
                       Download link
-                    </a>
-                  </div>
+                    </Text>
+                  </Box>
                 )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
 
       {carouselOpen && (
         <ImageCarousel

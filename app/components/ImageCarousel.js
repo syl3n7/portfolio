@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import Image from 'next/image';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Box, IconButton, Image, Text } from '@chakra-ui/react';
+import { ChevronLeftIcon, ChevronRightIcon, CloseIcon } from '@chakra-ui/icons';
 
 export default function ImageCarousel({ images, initialIndex, onClose, gameName }) {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
@@ -35,68 +35,73 @@ export default function ImageCarousel({ images, initialIndex, onClose, gameName 
   }, [currentIndex, images]);
 
   const getVideoEmbedUrl = useCallback((url) => {
-    const videoId = url.includes('youtu.be') 
+    const videoId = url.includes('youtu.be')
       ? url.split('youtu.be/')[1]
-      : url.split('v=')[1]?.split('&')[0];
-    return videoId ? `https://www.youtube.com/embed/${videoId}` : null;
+      : url.split('v=')[1].split('&')[0];
+    return `https://www.youtube.com/embed/${videoId}`;
   }, []);
 
   return (
-    <div 
-      className="fixed inset-0 bg-black/90 backdrop-blur-sm z-[60] flex items-center justify-center"
+    <Box
+      position="fixed"
+      inset="0"
+      bg="blackAlpha.900"
+      zIndex="60"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      {/* Close button */}
-      <button 
+      <IconButton
+        icon={<CloseIcon />}
+        position="absolute"
+        top={4}
+        right={4}
+        color="white"
         onClick={onClose}
-        className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-50"
-      >
-        <X size={32} />
-      </button>
-
-      {/* Counter */}
-      <div className="absolute top-4 left-4 text-white text-lg">
+        zIndex="50"
+      />
+      <Text position="absolute" top={4} left={4} color="white" fontSize="lg">
         {currentIndex + 1} / {images.length}
-      </div>
-
-      {/* Navigation buttons */}
-      <button
+      </Text>
+      <IconButton
+        icon={<ChevronLeftIcon />}
+        position="absolute"
+        left={4}
+        color="white"
         onClick={prevImage}
-        className="absolute left-4 text-white hover:text-gray-300 transition-colors"
-      >
-        <ChevronLeft size={48} />
-      </button>
-
-      <button
+      />
+      <IconButton
+        icon={<ChevronRightIcon />}
+        position="absolute"
+        right={4}
+        color="white"
         onClick={nextImage}
-        className="absolute right-4 text-white hover:text-gray-300 transition-colors"
-      >
-        <ChevronRight size={48} />
-      </button>
-
-      {/* Main content */}
-      <div className="w-full h-full flex items-center justify-center p-16">
+      />
+      <Box w="full" h="full" display="flex" alignItems="center" justifyContent="center" p={16}>
         {isVideo ? (
           <iframe
             src={getVideoEmbedUrl(images[currentIndex])}
-            className="w-full max-w-6xl aspect-video"
+            width="100%"
+            height="100%"
+            style={{ maxWidth: '80vw', maxHeight: '80vh' }}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
         ) : (
-          <div className="relative w-full h-full max-w-6xl max-h-[80vh]">
+          <Box position="relative" w="full" h="full" maxW="6xl" maxH="80vh">
             <Image
               src={images[currentIndex]}
               alt={`${gameName} screenshot ${currentIndex + 1}`}
-              fill
-              className="object-contain"
-              sizes="(max-width: 768px) 100vw, 80vw"
+              objectFit="contain"
+              w="full"
+              h="full"
             />
-          </div>
+          </Box>
         )}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 }
