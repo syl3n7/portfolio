@@ -5,7 +5,6 @@ import { Box, Container } from '@chakra-ui/react'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import Portfolio from './components/Portfolio'
-import Resume from './components/Resume'
 import GameModal from './components/GameModal'
 
 const games = [
@@ -147,7 +146,6 @@ export default function Home() {
           games={games} 
           onGameSelect={handleGameSelect} 
         />
-        <Resume />
       </Container>
 
       {selectedGame && (
