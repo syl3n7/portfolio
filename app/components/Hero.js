@@ -8,7 +8,7 @@ export default function Hero() {
           Hi, my name is Cláudio
         </Heading>
         <Text fontSize="xl" color="blue.800">
-          I'm a generalist game programmer with a passion for tech
+          I&apos;m a generalist game programmer with a passion for tech
         </Text>
         <Text fontSize="lg" color="blue.700" mt={2}>
           Currently studying game development at IPMAIA

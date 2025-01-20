@@ -1,6 +1,14 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import { Box, Heading, Text, ListItem, Button, Grid } from '@chakra-ui/react';
+import { 
+  Box, 
+  Heading, 
+  Text, 
+  ListItem, 
+  Button, 
+  Grid, 
+  UnorderedList  // Add this import
+} from '@chakra-ui/react';
 import ImageCarousel from './ImageCarousel';
 
 export default function GameModal({ game, onClose }) {
