@@ -1,182 +1,162 @@
-# 🎮 Game Developer Portfolio
+# Game Developer Portfolio
 
 [![HomeLab Deployment](https://github.com/syl3n7/portfolio/actions/workflows/main.yml/badge.svg)](https://github.com/syl3n7/portfolio/actions/workflows/main.yml)
 
-A modern, responsive portfolio website built with **Next.js 15** and **Tailwind CSS**, showcasing game development projects and professional experience. Designed with a clean, minimalist aesthetic, this portfolio highlights interactive game projects with smooth animations and dynamic content.
+A modern, responsive portfolio website built with Next.js 15 and Tailwind CSS. Designed to showcase game development projects with interactive features and smooth animations.
 
----
+## Features
 
-## ✨ Features
+- **Modern Stack**: Built with Next.js 15, Tailwind CSS, and Turbopack
+- **Interactive Portfolio**: Detailed project modals with descriptions and galleries
+- **Game Integration**: WebGL game viewer for playable demos
+- **Responsive Design**: Mobile-first approach with smooth animations
+- **Performance Optimized**: Fast load times and SEO friendly
+- **Clean UI**: Minimalist design with a blue gradient theme
 
-- **Modern Design**: A sleek, responsive design with a blue gradient theme.
-- **Interactive Portfolio**: Showcase your game projects with detailed modal views, including descriptions, contributions, and galleries.
-- **Smooth Animations**: Powered by **Framer Motion** for smooth transitions and hover effects.
-- **Dynamic Content**: Easily add new games and update project details.
-- **SEO Optimized**: Built with Next.js for optimal search engine visibility.
-- **Performance**: Optimized with **Turbopack** for fast load times.
-- **Play Games**: Play WebGL games directly within the portfolio using an embedded game viewer.
+## Tech Stack
 
----
+- **Framework**: Next.js 15
+- **Styling**: Tailwind CSS
+- **UI Components**: Chakra UI, Lucide React
+- **Animations**: Framer Motion
+- **Typography**: Inter (Google Fonts)
+- **Deployment**: PM2
 
-## 🛠 Tech Stack
+## Project Structure
 
-- **Framework**: [Next.js 15](https://nextjs.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components**: [Chakra UI](https://chakra-ui.com/) and [Lucide React](https://lucide.dev/) for icons
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Font**: [Inter](https://fonts.google.com/specimen/Inter) (Google Fonts)
-- **Deployment**: PM2 for production
-
----
-
-## 📁 Project Structure
-
+```
 portfolio/
 ├── app/
-│ ├── components/
-│ │ ├── GameModal.js # Game details modal
-│ │ ├── GameViewer.js # Game viewer for WebGL games
-│ │ ├── Hero.js # Hero section
-│ │ ├── ImageCarousel.js # Image carousel for game galleries
-│ │ ├── Navigation.js # Navigation bar
-│ │ ├── Portfolio.js # Game projects grid
-│ ├── globals.css # Global styles
-│ ├── layout.js # Root layout
-│ └── page.js # Main page with game data
+│   ├── components/
+│   │   ├── GameModal.js
+│   │   ├── GameViewer.js
+│   │   ├── Hero.js
+│   │   ├── ImageCarousel.js
+│   │   ├── Navigation.js
+│   │   └── Portfolio.js
+│   ├── globals.css
+│   ├── layout.js
+│   └── page.js
 ├── public/
-│ ├── images/ # Image assets
-│ └── games/ # WebGL game builds
-├── ecosystem.config.js # PM2 configuration
-├── jsconfig.json # Path aliasing configuration
-├── tailwind.config.js # Tailwind configuration
-├── package.json # Project dependencies
-└── README.md # Project documentation
+│   ├── images/
+│   └── games/
+├── ecosystem.config.js
+├── jsconfig.json
+├── tailwind.config.js
+└── package.json
+```
 
----
-
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-- Node.js (Latest LTS version recommended)
+- Node.js (LTS version)
 - npm or yarn
 
 ### Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/syl3n7/portfolio.git
-   cd portfolio
-   ```
+```bash
+git clone https://github.com/syl3n7/portfolio.git
+cd portfolio
+```
 
 2. Install dependencies:
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
+3. Start development server:
+```bash
+npm run dev
+```
 
-   The site will be available at `http://localhost:3000`.
+Visit `http://localhost:3000` to view the site.
 
-### Production Build
+### Production Deployment
 
 1. Build the application:
-   ```bash
-   npm run build
-   ```
+```bash
+npm run build
+```
 
-2. Start the production server:
-   ```bash
-   npm start
-   ```
-
-### PM2 Deployment
-
-The project includes PM2 configuration for production deployment. Update the `ecosystem.config.js` file if needed, then run:
+2. Start with PM2:
 ```bash
 pm2 start ecosystem.config.js
 ```
 
-## 💻 Development
+## Development
 
-### Available Scripts
+### Scripts
 
-- `npm run dev`: Starts the development server with Turbopack.
-- `npm run build`: Creates a production build.
-- `npm start`: Starts the production server.
-- `npm run lint`: Runs ESLint for code linting.
+- `npm run dev` - Start development server
+- `npm run build` - Create production build
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
 
 ### Environment Variables
 
-The following environment variables can be set in `.env`:
-```env
+Create a `.env` file:
+```
 NODE_ENV=production
 PORT=3000
 ```
 
-## 🎮 Adding New Games
+## Adding Projects
 
 Add new games to the `games` array in `page.js`:
+
 ```javascript
 {
-  id: uniqueId,
+  id: "unique-id",
   name: "Game Name",
-  image: "/path/to/image.png",
+  image: "/images/game.png",
   description: "Game description",
   platform: "PC",
-  contributions: [
-    "Contribution 1",
-    "Contribution 2"
-  ],
+  contributions: ["Contribution 1", "Contribution 2"],
   projectInfo: {
-    technologies: ["Technology 1", "Technology 2"],
+    technologies: ["Tech 1", "Tech 2"],
     languages: ["Language 1"],
-    communication: ["Tool 1", "Tool 2"],
+    communication: ["Tool 1"],
     management: "Management Method"
   },
   links: {
     store: "store-url",
     website: "website-url",
     twitter: "social-url",
-    webglUrl: "/path/to/webgl/game"
+    webglUrl: "/games/demo"
   },
   gallery: [
-    "/path/to/screenshot1.jpg",
-    "/path/to/screenshot2.jpg"
+    "/images/screenshot1.jpg",
+    "/images/screenshot2.jpg"
   ]
 }
 ```
 
-## 🎨 Customization
+## Customization
 
-### Styling
+### Tailwind Configuration
 
-The project uses Tailwind CSS for styling. Customize the theme in `tailwind.config.js`:
+Customize theme in `tailwind.config.js`:
+
 ```javascript
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       colors: {
         background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
-    },
-  },
-  plugins: [],
+        foreground: "var(--foreground)"
+      }
+    }
+  }
 };
 ```
 
-### Path Aliasing
+### Path Aliases
 
-The project uses `jsconfig.json` for path aliasing, making imports cleaner:
+Configure imports in `jsconfig.json`:
+
 ```json
 {
   "compilerOptions": {
@@ -187,17 +167,13 @@ The project uses `jsconfig.json` for path aliasing, making imports cleaner:
 }
 ```
 
-## 📱 Browser Support
+## Contact
 
-The portfolio is optimized for modern browsers and is fully responsive for mobile devices.
+- **Name**: Cláudio Pinheiro
+- **Email**: claudiosilva@pm.me
+- **Portfolio**: [claudiopinheiro.pt](http://claudiopinheiro.pt)
+- **GitHub**: [@syl3n7](https://github.com/syl3n7)
 
-## 📄 License
+## License
 
-This project is open source and available under the MIT License.
-
-## 📧 Contact
-
-Cláudio Pinheiro
-Email: claudiosilva@pm.me
-Portfolio: [http://claudiopinheiro.pt](http://claudiopinheiro.pt)
-GitHub: [https://github.com/syl3n7](https://github.com/syl3n7)
+This project is available under the MIT License.
