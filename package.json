@@ -20,7 +20,8 @@
     "lucide-react": "^0.469.0",
     "next": "^15.1.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.4.0"
   },
   "devDependencies": {
     "eslint": "^9.17.0",

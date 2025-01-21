@@ -83,29 +83,6 @@ const games = [
       github: "https://github.com/syl3n7/CloudShooter",
       webglUrl: "/games/cloudshooter/index.html",
     }
-  },
-  {
-    id: 4,
-    name: "MistSolitude",
-    image: "/api/placeholder/400/300",
-    description: "An atmospheric adventure game set in a mysterious, mist-covered world.",
-    platform: "PC",
-    contributions: [
-      "Developed all the game mechanics and systems",
-      "Implemented the core gameplay features",
-      "Implemented animations and visual effects",
-      "Optimized the game for better performance",
-    ],
-    projectInfo: {
-      technologies: ["Unity"],
-      languages: ["C#"],
-      communication: ["Discord"],
-      management: "Github Projects"
-    },
-    links: {
-      website: "https://steelchunk.eu/games/MistSolitude/releases/latest.zip",
-      github: "https://github.com/Mariana041/MistSolitude",
-    }
   }
 ];
 
