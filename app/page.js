@@ -105,7 +105,6 @@ const games = [
     links: {
       website: "https://steelchunk.eu/games/MistSolitude/releases/latest.zip",
       github: "https://github.com/Mariana041/MistSolitude",
-      webglUrl: "/games/mistsolitude/index.html",
     }
   }
 ];
