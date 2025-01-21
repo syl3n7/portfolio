@@ -20,15 +20,17 @@ import {
   Image,
   Divider
 } from '@chakra-ui/react';
-import { ExternalLinkIcon, LinkIcon } from '@chakra-ui/icons'; // Changed CodeIcon to LinkIcon
+import { ExternalLinkIcon, LinkIcon, TriangleUpIcon } from '@chakra-ui/icons'; // Import TriangleUpIcon as PlayIcon
 import { motion, AnimatePresence } from 'framer-motion';
 import ImageCarousel from './ImageCarousel';
+import GameViewer from './GameViewer'; // Import GameViewer
 
 const MotionBox = motion(Box);
 
 export default function GameModal({ game, onClose }) {
   const [carouselOpen, setCarouselOpen] = useState(false);
   const [initialImageIndex, setInitialImageIndex] = useState(0);
+  const [gameViewerOpen, setGameViewerOpen] = useState(false);
 
   const openCarousel = (index) => {
     setInitialImageIndex(index);
@@ -141,10 +143,19 @@ export default function GameModal({ game, onClose }) {
                       as={Link}
                       href={game.links.github}
                       isExternal
-                      leftIcon={<LinkIcon />}  // Changed from CodeIcon to LinkIcon
+                      leftIcon={<LinkIcon />}
                       colorScheme="gray"
                     >
                       View Code
+                    </Button>
+                  )}
+                  {game.links.webglUrl && (
+                    <Button
+                      onClick={() => setGameViewerOpen(true)}
+                      colorScheme="green"
+                      leftIcon={<TriangleUpIcon />} // Use TriangleUpIcon as PlayIcon
+                    >
+                      Play Game
                     </Button>
                   )}
                 </HStack>
@@ -190,6 +201,13 @@ export default function GameModal({ game, onClose }) {
           />
         )}
       </AnimatePresence>
+
+      {gameViewerOpen && (
+        <GameViewer
+          gameUrl={game.links.webglUrl}
+          onClose={() => setGameViewerOpen(false)}
+        />
+      )}
     </Modal>
   );
 }

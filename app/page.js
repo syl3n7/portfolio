@@ -81,6 +81,7 @@ const games = [
     links: {
       website: "https://steelchunk.eu/games/CloudShooter/releases/latest.zip",
       github: "https://github.com/syl3n7/CloudShooter",
+      webglUrl: "/games/cloudshooter/index.html",
     }
   },
   {
@@ -104,13 +105,14 @@ const games = [
     links: {
       website: "https://steelchunk.eu/games/MistSolitude/releases/latest.zip",
       github: "https://github.com/Mariana041/MistSolitude",
+      webglUrl: "/games/mistsolitude/index.html",
     }
   }
 ];
 
 export default function Home() {
   const [selectedGame, setSelectedGame] = useState(null);
-  
+
   // Debug: Log when selected game changes
   useEffect(() => {
     if (selectedGame) {
