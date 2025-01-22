@@ -54,7 +54,7 @@ function createUnityInstance(canvas, config, onProgress) {
       preserveDrawingBuffer: false,
       powerPreference: 2,
     },
-    wasmFileSize: 48396615,
+    wasmFileSize: 47852952,
     cacheControl: function (url) {
       return (url == Module.dataUrl || url.match(/\.bundle/)) ? "must-revalidate" : "no-store";
     },
@@ -89,10 +89,8 @@ function createUnityInstance(canvas, config, onProgress) {
     },
     locateFile: function (url) {
       if (url == "build.wasm") return this.codeUrl;
-      if (url == "build.worker.js") return this.workerUrl;
       return url;
     },
-    mainScriptUrlOrBlob: this.frameworkUrl,
     disabledCanvasEvents: [
       "contextmenu",
       "dragstart",
@@ -1412,8 +1410,6 @@ Module.UnityCache = function () {
       reject("Your browser does not support WebAssembly.");
     } else if (!Module.SystemInfo.hasWasm2023) {
       reject("Your browser does not support WebAssembly 2023. Please update to Chrome ≥ 91 (May 2021), Firefox ≥ 89 (June 2021) or Safari ≥ 16.4 (March 2023). (failed " + Module.SystemInfo.missingWasm2023Feature + ")");
-    } else if (!Module.SystemInfo.hasThreads) {
-      reject("Your browser does not support multithreading.");
     } else {
       Module.startupErrorHandler = reject;
       onProgress(0);

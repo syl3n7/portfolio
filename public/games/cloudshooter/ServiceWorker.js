@@ -1,8 +1,7 @@
-const cacheName = "steelchunk-CloudShooter-0.4";
+const cacheName = "steelchunk-CloudShooter-0.5";
 const contentToCache = [
     "Build/cloudshooter.loader.js",
     "Build/cloudshooter.framework.js",
-    "Build/cloudshooter.worker.js",
     "Build/cloudshooter.data",
     "Build/cloudshooter.wasm",
     "TemplateData/style.css"
