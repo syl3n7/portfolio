@@ -1,28 +1,28 @@
-# 🎮 Game Developer Portfolio
+# Game Developer Portfolio
 
 [![HomeLab Deployment](https://github.com/syl3n7/portfolio/actions/workflows/main.yml/badge.svg)](https://github.com/syl3n7/portfolio/actions/workflows/main.yml)
 
-A modern, responsive portfolio website built with Next.js 15 and Tailwind CSS. Designed to showcase game development projects with interactive features and smooth animations. ✨
+A modern, responsive portfolio website built with Next.js 15 and Tailwind CSS. Designed to showcase game development projects with interactive features and smooth animations.
 
-## 🌟 Features
+## Features
 
-- 🎨 **Modern Stack**: Built with Next.js 15, Tailwind CSS, and Turbopack
-- 🎯 **Interactive Portfolio**: Detailed project modals with descriptions and galleries
-- 🕹️ **Game Integration**: WebGL game viewer for playable demos
-- 📱 **Responsive Design**: Mobile-first approach with smooth animations
-- ⚡ **Performance Optimized**: Fast load times and SEO friendly
-- 💎 **Clean UI**: Minimalist design with a blue gradient theme
+- **Modern Stack**: Built with Next.js 15, Tailwind CSS, and Turbopack
+- **Interactive Portfolio**: Detailed project modals with descriptions and galleries
+- **Game Integration**: WebGL game viewer for playable demos
+- **Responsive Design**: Mobile-first approach with smooth animations
+- **Performance Optimized**: Fast load times and SEO friendly
+- **Clean UI**: Minimalist design with a blue gradient theme
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- 🚀 **Framework**: Next.js 15
-- 🎨 **Styling**: Tailwind CSS
-- 🧩 **UI Components**: Chakra UI, Lucide React
-- ✨ **Animations**: Framer Motion
-- 📝 **Typography**: Inter (Google Fonts)
-- 🔧 **Deployment**: PM2
+- **Framework**: Next.js 15
+- **Styling**: Tailwind CSS
+- **UI Components**: Chakra UI, Lucide React
+- **Animations**: Framer Motion
+- **Typography**: Inter (Google Fonts)
+- **Deployment**: PM2
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 portfolio/
@@ -46,14 +46,14 @@ portfolio/
 └── package.json
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
-### ⚙️ Prerequisites
+### Prerequisites
 
 - Node.js (LTS version)
 - npm or yarn
 
-### 💻 Installation
+### Installation
 
 1. Clone the repository:
 ```bash
@@ -71,9 +71,9 @@ npm install
 npm run dev
 ```
 
-Visit `http://localhost:3000` to view the site. ✨
+Visit `http://localhost:3000` to view the site.
 
-### 🌐 Production Deployment
+### Production Deployment
 
 1. Build the application:
 ```bash
@@ -85,16 +85,16 @@ npm run build
 pm2 start ecosystem.config.js
 ```
 
-## 👨‍💻 Development
+## Development
 
-### 📜 Scripts
+### Scripts
 
-- 🔥 `npm run dev` - Start development server
-- 🏗️ `npm run build` - Create production build
-- 🚀 `npm start` - Start production server
-- ✨ `npm run lint` - Run ESLint
+- `npm run dev` - Start development server
+- `npm run build` - Create production build
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
 
-### 🔒 Environment Variables
+### Environment Variables
 
 Create a `.env` file:
 ```
@@ -102,7 +102,7 @@ NODE_ENV=production
 PORT=3000
 ```
 
-## 🎮 Adding Projects
+## Adding Projects
 
 Add new games to the `games` array in `page.js`:
 
@@ -133,9 +133,9 @@ Add new games to the `games` array in `page.js`:
 }
 ```
 
-## ⚙️ Customization
+## Customization
 
-### 🎨 Tailwind Configuration
+### Tailwind Configuration
 
 Customize theme in `tailwind.config.js`:
 
@@ -153,7 +153,7 @@ module.exports = {
 };
 ```
 
-### 🔗 Path Aliases
+### Path Aliases
 
 Configure imports in `jsconfig.json`:
 
@@ -167,13 +167,13 @@ Configure imports in `jsconfig.json`:
 }
 ```
 
-## 📫 Contact
+## Contact
 
-- 👨‍💻 **Name**: Cláudio Pinheiro
-- 📧 **Email**: claudiosilva@pm.me
-- 🌐 **Portfolio**: [claudiopinheiro.pt](http://claudiopinheiro.pt)
-- 🐱 **GitHub**: [@syl3n7](https://github.com/syl3n7)
+- **Name**: Cláudio Pinheiro
+- **Email**: claudiosilva@pm.me
+- **Portfolio**: [claudiopinheiro.pt](http://claudiopinheiro.pt)
+- **GitHub**: [@syl3n7](https://github.com/syl3n7)
 
-## 📄 License
+## License
 
-This project is available under the MIT License. ⚖️
+This project is available under the MIT License.

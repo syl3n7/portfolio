@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, IconButton } from '@chakra-ui/react';
+import { Box, IconButton, Button } from '@chakra-ui/react';
 import { CloseIcon } from '@chakra-ui/icons';
 import { motion } from 'framer-motion';
 
@@ -44,15 +44,15 @@ export default function GameViewer({ gameUrl, onClose }) {
         display="flex"
         alignItems="center"
         justifyContent="center"
+        flexDirection="column"
       >
-        <iframe
-          src={gameUrl}
-          width="100%"
-          height="100%"
-          frameBorder="0"
-          allow="autoplay; fullscreen"
-          style={{ border: 'none' }}
-        />
+        <Button
+          colorScheme="teal"
+          size="lg"
+          onClick={() => window.open(gameUrl, '_blank')}
+        >
+          Open Game in New Tab
+        </Button>
       </Box>
     </MotionBox>
   );
