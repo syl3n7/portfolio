@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from 'react';
 import { Box, IconButton, Button } from '@chakra-ui/react';
 import { CloseIcon } from '@chakra-ui/icons';
 import { motion } from 'framer-motion';
@@ -7,6 +8,11 @@ import { motion } from 'framer-motion';
 const MotionBox = motion(Box);
 
 export default function GameViewer({ gameUrl, onClose }) {
+  useEffect(() => {
+    window.open(gameUrl, '_blank');
+    onClose(); // Close the modal after opening the game in a new tab
+  }, [gameUrl, onClose]);
+
   return (
     <MotionBox
       position="fixed"
