@@ -44,5 +44,5 @@ jobs:
           npm ci
           npm run build
           pm2 restart ecosystem.config.js
-          rm -rf /var/www/html/cloudshooter
-          mv actions-runner/_work/portfolio/portfolio/public/games/cloudshooter/ /var/www/html/
+          rm -rf /var/www/html/*
+          mv /root/actions-runner/_work/portfolio/portfolio/public/games/cloudshooter/ /var/www/html/
