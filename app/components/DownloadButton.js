@@ -11,13 +11,14 @@ export default function DownloadButton({ gameName }) {
   const handleDownload = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch(`https://steelchunk.eu/api/games/${gameName}`);
+      const response = await fetch(`https://steelchunk.eu/api/games/${gameName.toLowerCase()}`);
       if (!response.ok) throw new Error('Download failed');
       const data = await response.json();
       
+      // Create and trigger download
       const link = document.createElement('a');
       link.href = data.url;
-      link.download = `${gameName}.zip`;
+      link.setAttribute('download', `${gameName}.zip`);
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -30,6 +31,7 @@ export default function DownloadButton({ gameName }) {
         isClosable: true,
       });
     } catch (err) {
+      console.error('Download error:', err);
       toast({
         title: "Download failed", 
         description: err.message,
@@ -48,10 +50,9 @@ export default function DownloadButton({ gameName }) {
       isLoading={isLoading}
       loadingText="Downloading..."
       leftIcon={<DownloadIcon />}
-      colorScheme="green"
-      variant="solid"
+      colorScheme="purple"
     >
-      Download
+      Download Game
     </Button>
   );
 }

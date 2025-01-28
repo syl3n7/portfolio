@@ -20,10 +20,11 @@ import {
   Image,
   Divider
 } from '@chakra-ui/react';
-import { DownloadIcon, ExternalLinkIcon, LinkIcon, TriangleUpIcon } from '@chakra-ui/icons';
+import { ExternalLinkIcon, LinkIcon, TriangleUpIcon } from '@chakra-ui/icons';
 import { motion, AnimatePresence } from 'framer-motion';
 import ImageCarousel from './ImageCarousel';
 import GameViewer from './GameViewer';
+import DownloadButton from './DownloadButton';
 
 const MotionBox = motion(Box);
 
@@ -31,22 +32,10 @@ export default function GameModal({ game, onClose }) {
   const [carouselOpen, setCarouselOpen] = useState(false);
   const [initialImageIndex, setInitialImageIndex] = useState(0);
   const [gameViewerOpen, setGameViewerOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  console.log('Game data:', game);
 
   const openCarousel = (index) => {
     setInitialImageIndex(index);
     setCarouselOpen(true);
-  };
-
-  const handleDownload = () => {
-    setIsLoading(true);
-    // Simulate a download process
-    setTimeout(() => {
-      setIsLoading(false);
-      // Handle the actual download logic here
-    }, 2000);
   };
 
   return (
@@ -61,7 +50,7 @@ export default function GameModal({ game, onClose }) {
         rounded="2xl"
         overflow="hidden"
         my={4}
-        zIndex={1400}  // Ensure modal is below carousel
+        zIndex={1400}
       >
         <ModalHeader p={0}>
           <Box 
@@ -139,18 +128,7 @@ export default function GameModal({ game, onClose }) {
               <Box>
                 <Heading size="md" mb={4} color="blue.900">Links</Heading>
                 <HStack spacing={4}>
-                  {game.name && ( // Changed from game.links.download
-                    <Button
-                      onClick={handleDownload}
-                      isLoading={isLoading}
-                      loadingText="Downloading..."
-                      leftIcon={<DownloadIcon />}
-                      colorScheme="green"
-                      variant="solid"
-                    >
-                      Download
-                    </Button>
-                  )}
+                  {game.name && <DownloadButton gameName={game.name} />}
                   {game.links.github && (
                     <Button
                       as={Link}
