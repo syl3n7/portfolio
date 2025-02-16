@@ -101,7 +101,9 @@ const games = [
       management: "NA"
     },
     links: {
-      webglUrl: "/games/arcticescape/index.html"
+      webglUrl: "/games/arcticescape/index.html",
+      website: "https://steelchunk.eu/games/ArcticEscape/releases/latest.zip",
+      github: "https://github.com/syl3n7/Winterjam2025",
     },
     gallery: [
       // Add screenshot paths here
