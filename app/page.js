@@ -87,7 +87,7 @@ const games = [
   {
     id: 4,
     name: "Arctic Escape",
-    image: "/images/arctic-escape.png", // Make sure to add an appropriate image
+    image: "/images/arcticescape.png", // Make sure to add an appropriate image
     description: "An exciting escape adventure game set in the Arctic environment.",
     platform: "PC / Web",
     contributions: [
