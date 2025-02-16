@@ -83,6 +83,29 @@ const games = [
       github: "https://github.com/syl3n7/CloudShooter",
       webglUrl: "/games/cloudshooter/index.html",
     }
+  },
+  {
+    id: 4,
+    name: "Arctic Escape",
+    image: "/images/arctic-escape.png", // Make sure to add an appropriate image
+    description: "An exciting escape adventure game set in the Arctic environment.",
+    platform: "PC / Web",
+    contributions: [
+      "Game development and implementation",
+      // Add more specific contributions here
+    ],
+    projectInfo: {
+      technologies: ["Unity"],
+      languages: ["C#"],
+      communication: ["NA"],
+      management: "NA"
+    },
+    links: {
+      webglUrl: "/games/arcticescape/index.html"
+    },
+    gallery: [
+      // Add screenshot paths here
+    ]
   }
 ];
 
