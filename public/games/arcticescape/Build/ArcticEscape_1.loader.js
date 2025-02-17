@@ -258,18 +258,18 @@ function createUnityInstance(canvas, config, onProgress) {
       return re && re[idx];
     }
     for(var b = 0; b < browsers.length; ++b) {
-      browserVersion = extractRe(browsers[b][0] + '[\/ ](.*?)[ \\)]', ua, 1);
+      browserVersion = extractRe(browsers[b][0] + '[\/ ](.*?)[ )]', ua, 1);
       if (browserVersion) {
         browser = browsers[b][1];
         break;
       }
     }
     if (browser == 'Safari') browserVersion = extractRe('Version\/(.*?) ', ua, 1);
-    if (browser == 'Internet Explorer') browserVersion = extractRe('rv:(.*?)\\)? ', ua, 1) || browserVersion;
+    if (browser == 'Internet Explorer') browserVersion = extractRe('rv:(.*?)\)? ', ua, 1) || browserVersion;
 
     // These OS strings need to match the ones in Runtime/Misc/SystemInfo.cpp::GetOperatingSystemFamily()
     var oses = [
-      ['Windows (.*?)[;\)]', 'Windows'],
+      ['Windows (.*?)[;)]', 'Windows'],
       ['Android ([0-9_\.]+)', 'Android'],
       ['iPhone OS ([0-9_\.]+)', 'iPhoneOS'],
       ['iPad.*? OS ([0-9_\.]+)', 'iPadOS'],
