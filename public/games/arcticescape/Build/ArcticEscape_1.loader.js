@@ -270,13 +270,13 @@ function createUnityInstance(canvas, config, onProgress) {
     // These OS strings need to match the ones in Runtime/Misc/SystemInfo.cpp::GetOperatingSystemFamily()
     var oses = [
       ['Windows (.*?)[;\)]', 'Windows'],
-      ['Android ([0-9_\.]+)', 'Android'],
-      ['iPhone OS ([0-9_\.]+)', 'iPhoneOS'],
-      ['iPad.*? OS ([0-9_\.]+)', 'iPadOS'],
+      ['Android ([0-9_.]+)', 'Android'],      // Removed escape
+      ['iPhone OS ([0-9_.]+)', 'iPhoneOS'],   // Removed escape
+      ['iPad.*? OS ([0-9_.]+)', 'iPadOS'],    // Removed escape
       ['FreeBSD( )', 'FreeBSD'],
       ['OpenBSD( )', 'OpenBSD'],
       ['Linux|X11()', 'Linux'],
-      ['Mac OS X ([0-9_\\.]+)', 'MacOS'],
+      ['Mac OS X ([0-9_.]+)', 'MacOS'],       // Removed double escape
       ['bot|google|baidu|bing|msn|teoma|slurp|yandex', 'Search Bot']
     ];
     for(var o = 0; o < oses.length; ++o) {
