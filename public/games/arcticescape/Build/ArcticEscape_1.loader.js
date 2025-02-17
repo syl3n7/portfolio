@@ -271,8 +271,8 @@ function createUnityInstance(canvas, config, onProgress) {
     var oses = [
       ['Windows (.*?)[;\)]', 'Windows'],
       ['Android ([0-9_\.]+)', 'Android'],
-      ['iPhone OS ([0-9_\.]+)', 'iPhoneOS'],
-      ['iPad.*? OS ([0-9_\.]+)', 'iPadOS'],
+      ['iPhone OS ([0-9_.]+)', 'iPhoneOS'],
+      ['iPad.*? OS ([0-9_.]+)', 'iPadOS'],
       ['FreeBSD( )', 'FreeBSD'],
       ['OpenBSD( )', 'OpenBSD'],
       ['Linux|X11()', 'Linux'],
