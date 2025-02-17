@@ -87,12 +87,11 @@ const games = [
   {
     id: 4,
     name: "Arctic Escape",
-    image: "/images/arcticescape.png", // Make sure to add an appropriate image
+    image: "/images/arcticescape.png",
     description: "An exciting escape adventure game set in the Arctic environment.",
     platform: "PC / Web",
     contributions: [
       "Game development and implementation",
-      // Add more specific contributions here
     ],
     projectInfo: {
       technologies: ["Unity"],
@@ -101,13 +100,11 @@ const games = [
       management: "NA"
     },
     links: {
-      webglUrl: "/games/arcticescape/index.html",
-      website: "https://steelchunk.eu/games/arctic-escape/ArcticEscape.zip",
+      website: "https://steelchunk.eu/games/ArcticEscape/releases/latest.zip",
       github: "https://github.com/syl3n7/Winterjam2025",
+      webglUrl: "/games/arcticescape/index.html"
     },
-    gallery: [
-      // Add screenshot paths here
-    ]
+    gallery: []
   }
 ];
 

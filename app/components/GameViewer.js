@@ -9,9 +9,10 @@ const MotionBox = motion(Box);
 
 export default function GameViewer({ gameUrl, onClose }) {
   useEffect(() => {
-    window.open('https://claudiopinheiro.pt/cloudshooter', '_blank');
-    onClose(); // Close the modal after opening the game in a new tab
-  }, [onClose]);
+    // Use the gameUrl prop instead of hardcoded URL
+    window.open(gameUrl, '_blank');
+    onClose();
+  }, [gameUrl, onClose]);
 
   return (
     <MotionBox
@@ -55,7 +56,7 @@ export default function GameViewer({ gameUrl, onClose }) {
         <Button
           colorScheme="teal"
           size="lg"
-          onClick={() => window.open('https://claudiopinheiro.pt/cloudshooter', '_blank')}
+          onClick={() => window.open(gameUrl, '_blank')}
         >
           Open Game in New Tab
         </Button>
