@@ -1965,6 +1965,7 @@ var ASM_CONSTS = {
   		}
   
   		// Fallback: Escape special characters with RegExp. This handles most cases but not all!
+  		id = id.replace(/\\/g, "\\\\");
   		return id.replace(/(#|\.|\+|\[|\]|\(|\)|\{|\})/g, "\\$1");
   	}
   function jsCanvasSelector() {
