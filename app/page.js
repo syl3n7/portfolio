@@ -102,7 +102,7 @@ const games = [
     },
     links: {
       webglUrl: "/games/arcticescape/index.html",
-      website: "https://steelchunk.eu/games/ArcticEscape/releases/latest.zip",
+      website: "https://steelchunk.eu/games/arctic-escape/ArcticEscape.zip",
       github: "https://github.com/syl3n7/Winterjam2025",
     },
     gallery: [
