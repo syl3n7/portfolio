@@ -18,13 +18,38 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        bg="whiteAlpha.70"
+        bg="blue.50"
         backdropFilter="blur(10px)"
         rounded="2xl"
         p={{ base: 6, md: 10 }}
-        shadow="2xl"
-        border="1px"
-        borderColor="whiteAlpha.300"
+        shadow="xl"
+        border="2px"
+        borderColor="blue.400"
+        position="relative"
+        overflow="hidden"
+        _before={{
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '5px',
+          bgGradient: 'linear(to-r, blue.300, cyan.300, blue.500)',
+          zIndex: 1
+        }}
+        _after={{
+          content: '""',
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          width: '100%',
+          height: '5px',
+          bgGradient: 'linear(to-r, blue.300, cyan.300, blue.500)',
+          zIndex: 1
+        }}
+        sx={{
+          boxShadow: '0 10px 30px -10px rgba(59, 130, 246, 0.3)'
+        }}
       >
         <Heading 
           as="h2" 
@@ -32,6 +57,8 @@ export default function Hero() {
           mb={{ base: 3, md: 4 }}
           color="blue.900"
           letterSpacing="tight"
+          bgGradient="linear(to-r, blue.700, blue.900)"
+          bgClip="text"
         >
           Hi, my name is Cláudio
         </Heading>
