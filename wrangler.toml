@@ -1,0 +1,9 @@
+name = "portfolio"
+compatibility_date = "2025-09-01"
+
+[assets]
+directory = "./out"
+
+[[routes]]
+pattern = "demo.portfolio.steelchunk.eu/*"
+zone_name = "steelchunk.eu"
