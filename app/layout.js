@@ -5,8 +5,8 @@ import ClientLayout from './ClientLayout'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Cláudio Pinheiro - Game Developer',
-  description: 'Portfolio of Cláudio Pinheiro, a game developer with a passion for tech',
+  title: 'Portfolio Demo - Modern Web Development',
+  description: 'A demonstration portfolio showcasing modern web development projects and best practices',
 }
 
 export default function RootLayout({ children }) {

@@ -60,7 +60,7 @@ export default function Hero() {
           bgGradient="linear(to-r, blue.700, blue.900)"
           bgClip="text"
         >
-          Hi, my name is Cláudio
+          Portfolio Demo
         </Heading>
         <Text 
           fontSize={{ base: "lg", md: "xl", lg: "2xl" }}
@@ -68,7 +68,7 @@ export default function Hero() {
           maxW="2xl"
           mx="auto"
         >
-          I&apos;m a generalist game programmer with a passion for tech
+          A showcase of modern web development projects
         </Text>
         <Text 
           fontSize={{ base: "md", md: "lg" }}
@@ -76,7 +76,7 @@ export default function Hero() {
           mt={{ base: 2, md: 3 }}
           fontWeight="medium"
         >
-          Currently studying game development at IPMAIA
+          Featuring full-stack applications, mobile apps, and AI-powered solutions
         </Text>
       </MotionBox>
     </Box>

@@ -45,7 +45,7 @@ export default function Navigation() {
               color="blue.900"
               letterSpacing="tight"
             >
-              Cláudio Pinheiro
+              Portfolio Demo
             </Text>
           </MotionBox>
 

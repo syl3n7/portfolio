@@ -10,26 +10,26 @@ import GameModal from './components/GameModal'
 const games = [
   {
     id: 1,
-    name: "Open Weather Map Unity Project",
+    name: "E-Commerce Platform",
     image: "/images/bg.jpg",
-    description: "API that bridges open weather map with Geonames.\nThe purpose of this bridge is to find the latitude and longitude provided from geonames when the location is entered and only then we send the data request to open weather map, so that we fetch all the text data and textures for the images.",
-    platform: "PC",
+    description: "A modern, responsive e-commerce platform built with React and Node.js.\nFeatures include user authentication, shopping cart, payment integration, and admin dashboard.",
+    platform: "Web",
     contributions: [
-      "Open weather map and geonames classes serializations",
-      "Handling of webrequests to fetch the data",
-      "Handling of the data to send for each part of the UI",
-      "UI for entering the app, with background looping video",
-      "UI for the information provided to the final user",
+      "Frontend development with React and Redux",
+      "RESTful API development with Node.js and Express",
+      "Database design and optimization with PostgreSQL",
+      "Payment gateway integration with Stripe",
+      "Responsive UI/UX design with Material-UI",
     ],
     projectInfo: {
-      technologies: ["Unity"],
-      languages: ["C#"],
-      communication: ["NA"],
-      management: "NA"
+      technologies: ["React", "Node.js", "PostgreSQL", "Redis"],
+      languages: ["JavaScript", "TypeScript", "SQL"],
+      communication: ["REST API", "WebSocket"],
+      management: "Agile/Scrum"
     },
     links: {
-      website: "https://github.com/syl3n7/APAI-OWM-Fork/releases/download/v0.7/APAIProject_OpenWeatherMap.zip",
-      github: "https://github.com/syl3n7/APAI-OWM-Fork",
+      website: "https://demo-ecommerce.example.com",
+      github: "https://github.com/example/ecommerce-platform",
     },
     gallery: [
       "/images/captura1.png",
@@ -38,24 +38,25 @@ const games = [
   },
   {
     id: 2,
-    name: "Game Launcher",
+    name: "Task Management App",
     image: "/images/game-launcher-styled.svg",
-    description: "Simple game launcher for launching games.\nThis laucher is still being worked on and the UI is not on its final form.",
-    platform: "PC",
+    description: "A collaborative task management application with real-time updates.\nIncludes features like project boards, team collaboration, file sharing, and analytics.",
+    platform: "Web & Mobile",
     contributions: [
-      "Developed the launcher from scratch",
-      "Implemented the core functionalities of the launcher",
-      "Auto updates the games before launch",
+      "Cross-platform mobile app development with React Native",
+      "Real-time collaboration features with Socket.io",
+      "Cloud storage integration with AWS S3",
+      "Push notifications implementation",
     ],
     projectInfo: {
-      technologies: ["Unity"],
-      languages: ["C#"],
-      communication: ["Discord"],
-      management: "Forgejo, Plane"
+      technologies: ["React Native", "Node.js", "MongoDB", "Socket.io"],
+      languages: ["JavaScript", "TypeScript"],
+      communication: ["REST API", "GraphQL"],
+      management: "Jira, GitHub Projects"
     },
     links: {
-      website: "https://steelchunk.eu/launcher/releases/latest_stable.zip",
-      github: "https://github.com/syl3n7/Game_Launcher",
+      website: "https://demo-taskmanager.example.com",
+      github: "https://github.com/example/task-management-app",
     },
     gallery: [
       "/images/Launcher_Main.png"
@@ -63,46 +64,51 @@ const games = [
   },
   {
     id: 3,
-    name: "CloudShooter",
+    name: "AI-Powered Analytics Dashboard",
     image: "/images/background1080p.png",
-    description: "A fast-paced aerial combat game set among the clouds.\nThis game is being currently ported from java to unity.",
-    platform: "PC",
+    description: "An intelligent analytics dashboard with machine learning insights.\nProvides real-time data visualization, predictive analytics, and automated reporting.",
+    platform: "Web",
     contributions: [
-      "Developed the game from scratch, including core game systems and mechanics",
-      "Helped the art team to implement the art assets into the game",
-      "Level design, including creating and balancing levels for the game",
+      "Built interactive data visualizations with D3.js and Chart.js",
+      "Implemented machine learning models with Python and TensorFlow",
+      "Designed responsive dashboard interface with Vue.js",
+      "Created automated report generation system",
     ],
     projectInfo: {
-      technologies: ["Processing, Unity"],
-      languages: ["Java", "C#"],
-      communication: ["Discord"],
-      management: "Github Projects"
+      technologies: ["Vue.js", "Python", "TensorFlow", "Docker"],
+      languages: ["JavaScript", "Python", "SQL"],
+      communication: ["REST API", "WebSocket"],
+      management: "Azure DevOps"
     },
     links: {
-      website: "https://steelchunk.eu/games/CloudShooter/releases/latest.zip",
-      github: "https://github.com/syl3n7/CloudShooter",
-      webglUrl: "/games/cloudshooter/index.html",
-    }
+      website: "https://demo-analytics.example.com",
+      github: "https://github.com/example/ai-analytics-dashboard",
+    },
+    gallery: [
+      "/images/arcticescape.png"
+    ]
   },
   {
     id: 4,
-    name: "Arctic Escape",
+    name: "Mobile Banking App",
     image: "/images/arcticescape.png",
-    description: "An exciting escape adventure game set in the Arctic environment.",
-    platform: "PC / Web",
+    description: "A secure mobile banking application with biometric authentication.\nFeatures include account management, money transfers, bill payments, and financial insights.",
+    platform: "Mobile (iOS & Android)",
     contributions: [
-      "Game development and implementation",
+      "Implemented biometric authentication and security features",
+      "Built transaction history and analytics components",
+      "Integrated with banking APIs and payment systems",
+      "Designed user-friendly interface following banking UX standards",
     ],
     projectInfo: {
-      technologies: ["Unity"],
-      languages: ["C#"],
-      communication: ["NA"],
-      management: "NA"
+      technologies: ["Flutter", "Firebase", "Blockchain"],
+      languages: ["Dart", "Kotlin", "Swift"],
+      communication: ["REST API", "gRPC"],
+      management: "Confluence, Linear"
     },
     links: {
-      website: "https://steelchunk.eu/games/ArcticEscape/releases/latest.zip",
-      github: "https://github.com/syl3n7/Winterjam2025",
-      webglUrl: "/games/arcticescape/index.html"
+      website: "https://demo-banking.example.com",
+      github: "https://github.com/example/mobile-banking-app"
     },
     gallery: []
   }

@@ -32,7 +32,7 @@ export default function Portfolio({ games, onGameSelect }) {
           mx="auto"
           fontSize={{ base: "md", md: "lg" }}
         >
-          A collection of my game development projects
+          Example projects showcasing modern development practices
         </Text>
       </MotionBox>
 
