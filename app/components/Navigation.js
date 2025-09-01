@@ -106,7 +106,7 @@ export default function Navigation() {
               Portfolio
             </Link>
             <Link 
-              href="/docs/resume.pdf"
+              href="/resume"
               color="blue.900"
               fontWeight="medium"
               position="relative"
@@ -131,7 +131,7 @@ export default function Navigation() {
               Résumé
             </Link>
             <Link
-              href="mailto:claudiosilva@pm.me"
+              href="mailto:webmaster@steelchunk.eu"
               px={4}
               py={2}
               borderRadius="full"
@@ -200,7 +200,7 @@ export default function Navigation() {
                 Portfolio
               </Link>
               <Link 
-                href="/docs/resume.pdf"
+                href="/resume"
                 px={3} 
                 py={3}
                 color="blue.900"
@@ -214,7 +214,7 @@ export default function Navigation() {
                 Résumé
               </Link>
               <Link 
-                href="mailto:claudiosilva@pm.me" 
+                href="mailto:webmaster@steelchunk.eu" 
                 px={3} 
                 py={3}
                 color="blue.900"
