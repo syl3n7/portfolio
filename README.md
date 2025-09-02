@@ -1,6 +1,6 @@
 # 🎮 Game Developer Portfolio
 
-[![DEMO](http://demo.portfolio.steelchunk.eu/)
+[![Live Demo](https://img.shields.io/badge/demo-Live%20Demo-green?style=for-the-badge)](http://demo.portfolio.steelchunk.eu/)
 
 A modern, responsive portfolio website built with Next.js 15 and Tailwind CSS. Designed to showcase game development projects with interactive features and smooth animations.
 
