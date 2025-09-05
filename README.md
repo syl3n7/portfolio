@@ -1,6 +1,6 @@
 # 🎮 Game Developer Portfolio
 
-[![HomeLab Deployment](https://github.com/syl3n7/portfolio/actions/workflows/main.yml/badge.svg)](https://github.com/syl3n7/portfolio/actions/workflows/main.yml)
+[![Live Demo](https://img.shields.io/badge/demo-Live%20Demo-green?style=for-the-badge)](http://demo.portfolio.steelchunk.eu/)
 
 A modern, responsive portfolio website built with Next.js 15 and Tailwind CSS. Designed to showcase game development projects with interactive features and smooth animations.
 
