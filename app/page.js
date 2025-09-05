@@ -11,7 +11,7 @@ const games = [
   {
     id: 1,
     name: "E-Commerce Platform",
-    image: "/images/bg.jpg",
+    image: "https://via.placeholder.com/400x300/3B82F6/FFFFFF?text=E-Commerce+Platform",
     description: "A modern, responsive e-commerce platform built with React and Node.js.\nFeatures include user authentication, shopping cart, payment integration, and admin dashboard.",
     platform: "Web",
     contributions: [
@@ -32,14 +32,14 @@ const games = [
       github: "https://github.com/example/ecommerce-platform",
     },
     gallery: [
-      "/images/captura1.png",
-      "/images/captura2.png",
+      "https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=E-Commerce+Dashboard",
+      "https://via.placeholder.com/800x600/10B981/FFFFFF?text=Product+Catalog",
     ]
   },
   {
     id: 2,
     name: "Task Management App",
-    image: "/images/game-launcher-styled.svg",
+    image: "https://via.placeholder.com/400x300/10B981/FFFFFF?text=Task+Manager",
     description: "A collaborative task management application with real-time updates.\nIncludes features like project boards, team collaboration, file sharing, and analytics.",
     platform: "Web & Mobile",
     contributions: [
@@ -59,13 +59,14 @@ const games = [
       github: "https://github.com/example/task-management-app",
     },
     gallery: [
-      "/images/Launcher_Main.png"
+      "https://via.placeholder.com/800x600/10B981/FFFFFF?text=Task+Board",
+      "https://via.placeholder.com/800x600/F59E0B/FFFFFF?text=Team+Collaboration"
     ]
   },
   {
     id: 3,
     name: "AI-Powered Analytics Dashboard",
-    image: "/images/background1080p.png",
+    image: "https://via.placeholder.com/400x300/8B5CF6/FFFFFF?text=Analytics+Dashboard",
     description: "An intelligent analytics dashboard with machine learning insights.\nProvides real-time data visualization, predictive analytics, and automated reporting.",
     platform: "Web",
     contributions: [
@@ -85,13 +86,14 @@ const games = [
       github: "https://github.com/example/ai-analytics-dashboard",
     },
     gallery: [
-      "/images/arcticescape.png"
+      "https://via.placeholder.com/800x600/8B5CF6/FFFFFF?text=Data+Visualization",
+      "https://via.placeholder.com/800x600/EF4444/FFFFFF?text=ML+Insights"
     ]
   },
   {
     id: 4,
     name: "Mobile Banking App",
-    image: "/images/arcticescape.png",
+    image: "https://via.placeholder.com/400x300/F59E0B/FFFFFF?text=Mobile+Banking",
     description: "A secure mobile banking application with biometric authentication.\nFeatures include account management, money transfers, bill payments, and financial insights.",
     platform: "Mobile (iOS & Android)",
     contributions: [
@@ -110,7 +112,64 @@ const games = [
       website: "https://demo-banking.example.com",
       github: "https://github.com/example/mobile-banking-app"
     },
-    gallery: []
+    gallery: [
+      "https://via.placeholder.com/800x600/F59E0B/FFFFFF?text=Account+Dashboard",
+      "https://via.placeholder.com/800x600/06B6D4/FFFFFF?text=Transaction+History"
+    ]
+  },
+  {
+    id: 5,
+    name: "Social Media Platform",
+    image: "https://via.placeholder.com/400x300/EF4444/FFFFFF?text=Social+Platform",
+    description: "A modern social media platform with real-time messaging and content sharing.\nIncludes features like posts, stories, live streaming, and community groups.",
+    platform: "Web & Mobile",
+    contributions: [
+      "Developed real-time messaging system with WebSocket",
+      "Implemented content moderation with AI/ML",
+      "Built scalable media upload and processing pipeline",
+      "Created responsive PWA with offline capabilities",
+    ],
+    projectInfo: {
+      technologies: ["Next.js", "GraphQL", "PostgreSQL", "AWS"],
+      languages: ["TypeScript", "Python", "Go"],
+      communication: ["GraphQL", "WebSocket", "REST API"],
+      management: "Notion, GitHub Projects"
+    },
+    links: {
+      website: "https://demo-social.example.com",
+      github: "https://github.com/example/social-media-platform"
+    },
+    gallery: [
+      "https://via.placeholder.com/800x600/EF4444/FFFFFF?text=Social+Feed",
+      "https://via.placeholder.com/800x600/8B5CF6/FFFFFF?text=Live+Streaming"
+    ]
+  },
+  {
+    id: 6,
+    name: "Learning Management System",
+    image: "https://via.placeholder.com/400x300/06B6D4/FFFFFF?text=Learning+Platform",
+    description: "A comprehensive online learning platform with interactive courses.\nFeatures include video streaming, quizzes, progress tracking, and certification system.",
+    platform: "Web",
+    contributions: [
+      "Built video streaming platform with adaptive bitrate",
+      "Implemented interactive quiz and assessment system",
+      "Created progress tracking and analytics dashboard",
+      "Developed certificate generation and verification system",
+    ],
+    projectInfo: {
+      technologies: ["Angular", "Spring Boot", "MySQL", "Redis"],
+      languages: ["TypeScript", "Java", "SQL"],
+      communication: ["REST API", "WebSocket"],
+      management: "Jira, Confluence"
+    },
+    links: {
+      website: "https://demo-learning.example.com",
+      github: "https://github.com/example/learning-management-system"
+    },
+    gallery: [
+      "https://via.placeholder.com/800x600/06B6D4/FFFFFF?text=Course+Dashboard",
+      "https://via.placeholder.com/800x600/10B981/FFFFFF?text=Video+Player"
+    ]
   }
 ];
 
